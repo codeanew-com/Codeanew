@@ -1,0 +1,53 @@
+.scroll-link-pointer {
+    cursor: pointer;
+}
+
+.sticky-header {
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-default {
+    background-color: transparent;
+}
+
+.logo img {
+    height: 40px;
+    /* Adjust based on your design */
+    transition: transform 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+    /* Adjust based on your design */
+    transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #0071bb;
+    /* Adjust based on your design */
+}
+
+
+/* Default navbar toggler (burger) style */
+.navbar-toggler-default {
+    color: white;
+    /* White when not scrolled */
+    border-color: white;
+}
+
+/* Scrolled navbar toggler style */
+.navbar-toggler-scrolled {
+    color: black;
+    /* Black when scrolled */
+    border-color: black;
+}
+
+/* Optional: Add transition for smooth color change */
+.navbar-toggler {
+    transition: color 0.3s, border-color 0.3s;
+}

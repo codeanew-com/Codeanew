@@ -1,0 +1,28 @@
+{
+  "name": "codeanew",
+  "version": "1.0.0",
+  "description": "Codeanew's official website repository. Contains the source code, assets, and configurations for Codeanew's business website, showcasing services, portfolio, and contact information.",
+  "private": true,
+  "workspaces": [
+    "backend-api",
+    "frontend-admin",
+    "frontend-public"
+  ],
+  "scripts": {
+    "start:backend": "cd backend-api && npm run dev",
+    "start:admin": "cd frontend-admin && npm start",
+    "start:public": "cd frontend-public && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeanew-com/Codeanew.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeanew-com/Codeanew/issues"
+  },
+  "homepage": "https://github.com/codeanew-com/Codeanew#readme"
+}

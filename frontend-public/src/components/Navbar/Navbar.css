@@ -1,0 +1,131 @@
+/* .scroll-link-pointer {
+    cursor: pointer;
+
+}
+
+.sticky-header {
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+}
+
+.navbar-scrolled {
+    background-color: #ffffff;
+    box-shadow: none;
+}
+
+.navbar-default {
+    background-color: transparent;
+}
+
+.logo img {
+    height: 40px;
+
+    transition: transform 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+    transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #4187c6;
+
+}
+
+.navbar-toggler-default {
+    color: white;
+
+    border-color: white;
+}
+
+.navbar-toggler-scrolled {
+    color: black;
+
+    border-color: black;
+}
+
+.navbar-toggler {
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: #4187c6;
+}
+
+
+@media (max-width: 992px) {
+    .navbar {
+        margin: 15px;
+        border: none;
+        box-shadow: none;
+
+    }
+} */
+
+
+.scroll-link-pointer {
+    cursor: pointer;
+}
+
+.sticky-header {
+    transition: background-color 0.3s;
+}
+
+.navbar-scrolled {
+    background-color: #ffffff;
+}
+
+.navbar-default {
+    background-color: transparent;
+}
+
+.logo img {
+    height: 40px; /* Adjust based on your design */
+    transition: transform 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000; /* Adjust based on your design */
+    transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #4187c6; /* Adjust based on your design */
+}
+
+/* Default navbar toggler (burger) style */
+.navbar-toggler-default {
+    color: white; /* White when not scrolled */
+    border-color: white;
+}
+
+/* Scrolled navbar toggler style */
+.navbar-toggler-scrolled {
+    color: black; /* Black when scrolled */
+    border-color: black;
+}
+
+.navbar-toggler {
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: #4187c6;
+}
+
+/* Responsive styles for navbar */
+@media (max-width: 992px) {
+    .navbar {
+        margin: 15px;
+        border: none;
+    }
+}

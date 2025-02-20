@@ -1,0 +1,118 @@
+
+
+
+
+
+/* General container styling */
+.container {
+  max-width: 1500px;
+}
+
+/* Card styling */
+.booking-card {
+  
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.custom-calendar {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.time-slot-button {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.time-slot-button.active {
+  
+  color: white;
+  /* border-color: #007bff; */
+}
+
+.book-button {
+  background-color: #28a745;
+  border-color: #28a745;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.book-button:hover {
+  /* background-color: #215f88; */
+  /* border-color: #215f88; */
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+
+
+/* BookingCalendar.css */
+
+.custom-calendar {
+    border: none;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.custom-calendar .react-calendar__tile {
+    padding: 10px 0;
+    border-radius: 25%;
+    background: none;
+    border: none;
+    color: #000;
+    font-weight: 500;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.custom-calendar .react-calendar__tile--active {
+    background-color: #1E88E5;
+    color: white;
+    font-weight: bold;
+}
+
+.custom-calendar .react-calendar__tile--active:hover,
+.custom-calendar .react-calendar__tile--active:focus {
+    background-color: #1565C0;
+}
+
+.custom-calendar .react-calendar__tile--now {
+    background-color: rgba(30, 136, 229, 0.1);
+    border-radius: 25%;
+    color: #1E88E5;
+    font-weight: bold;
+}
+
+.custom-calendar .react-calendar__tile--range {
+    background-color: rgba(30, 136, 229, 0.1);
+    border-radius: 25%;
+    color: #1E88E5;
+    font-weight: bold;
+}
+
+.custom-calendar .react-calendar__month-view__days__day--neighboringMonth {
+    color: #ccc;
+}
+
+.custom-calendar .react-calendar__navigation button {
+    color: #1E88E5;
+    font-size: 16px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.custom-calendar .react-calendar__tile:hover,
+.custom-calendar .react-calendar__tile:focus {
+    background-color: rgba(30, 136, 229, 0.1);
+    color: #1E88E5;
+    border-radius: 25%;
+}

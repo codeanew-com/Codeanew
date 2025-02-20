@@ -1,0 +1,112 @@
+/* 
+
+.icon-color {
+  color: #f1cf2e;
+}
+
+.font-colorz {
+  color: #fff;
+}
+
+.counters {
+  padding: 40px 0;
+}
+
+.counter-box {
+
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+@media (max-width: 768px) {
+  .counter-box {
+      padding: 15px;
+  }
+
+  .icon-color {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .counter-box {
+      padding: 10px;
+  }
+
+  .icon-color {
+      font-size: 1.2rem;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* style.css */
+
+.icon-color {
+  color: #f1cf2e;
+}
+
+.font-colorz {
+  color: #fff;
+}
+
+.counters {
+  padding: 40px 0;
+}
+
+.counter-box {
+  
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: start; 
+}
+
+.icon {
+  margin-right: 25px; /* Adds consistent margin to the right of the icon */
+}
+
+@media (max-width: 768px) {
+  .counter-box {
+      padding: 15px;
+  }
+
+  .icon-color {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .counter-box {
+      padding: 10px;
+  }
+
+  .icon-color {
+      font-size: 1.2rem;
+  }
+
+  .counter-box {
+  
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    
+  }
+  .icon-logo {
+    align-items: start;
+    justify-items: start;
+    height: 45px;
+  }
+}

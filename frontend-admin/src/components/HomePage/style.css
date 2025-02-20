@@ -1,0 +1,181 @@
+    .features-section {
+    overflow-x: hidden;
+    }
+
+    .row {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin: 0 -10px; /* Negative margin to compensate for padding */
+    }
+
+    .col-lg-3,
+    .col-md-6,
+    .col-sm-6 {
+    padding: 10px; /* Add padding for gutter space */
+    box-sizing: border-box; /* Include padding in element's total width */
+    flex: 0 0 25%; /* Equal width for large screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly */
+    }
+
+    .features-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly */
+    height: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 250px; /* Ensure minimum height */
+    }
+
+    .icon {
+    margin-bottom: 15px; /* Space between icon and text */
+    text-align: center; /* Center icon horizontally */
+    }
+
+    .features-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Space between heading and paragraph */
+    }
+
+    .features-info p {
+    flex-grow: 1;
+    }
+
+    @media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%; /* Half width for medium screens */
+        max-width: 50%;
+    }
+    }
+
+    @media (max-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 100%; /* Full width for small screens */
+        max-width: 80%;
+    }
+    }
+.read-more-container {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+button.btn-md.button-theme {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.btn-md.button-theme:hover {
+  background-color:  #e4ad35; /* Adjust as needed */
+  color: #fff; /* Adjust as needed */
+}
+ .btn-md{
+    border-radius: 5px;
+    padding: 16.5px 45px;
+    width: 250px;
+}
+
+
+/* src/components/style.css */
+.icon-color {
+  color:  #e4ad35; /* Your desired color */
+}
+
+
+
+.item-bg{
+  height: 100vh !important;
+  width: 100% !important;
+  /* background-size:cover !important; */
+}
+
+
+.banner-inner{
+  margin-top:200px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banner {
+  position: relative;
+
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.banner video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%); /* Center the video */
+  object-fit: cover; /* Ensures video covers the entire banner */
+  z-index: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Ensure content is above the video */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-content {
+  z-index: 3; /* Content above everything else */
+  color: white; /* Ensure text is readable over the video */
+}
+
+.banner-inner {
+  max-width: 100%; 
+  padding: 20px;
+}
+
+/* h1.b-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #fff;
+} */
+
+.button-theme {
+  background-color:  #e4ad35;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.button-theme:hover {
+  background-color: #ff451b;
+  color: #fff;
+}

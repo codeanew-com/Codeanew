@@ -1,0 +1,31 @@
+/* SignUp.css */
+
+/* Make sure the container takes full width and height */
+.signup-container {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure both columns take exactly 50% width on larger screens */
+.signup-form-col {
+  flex: 0 0 50%; /* Ensures the column takes 50% width */
+}
+
+.signup-cover-col {
+  flex: 0 0 50%; /* Ensures the column takes 50% width */
+}
+
+/* Hide the right column on smaller screens (already handled by d-md-block in React-Bootstrap) */
+@media (max-width: 768px) {
+  .signup-cover-col {
+    display: none;
+  }
+}
+
+/* Remove padding and margin between columns */
+.signup-container .row {
+  margin: 0;
+  padding: 0;
+}
