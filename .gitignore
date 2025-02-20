@@ -1,0 +1,29 @@
+# Node.js dependencies
+/node_modules/
+*/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output
+/dist/
+/build/
+
+# Environment files
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/editor configurations
+.vscode/
+.idea/
+
+# Frontend build files (if any)
+frontend-admin/build/
+frontend-public/build/
+
+# Backend build files (if any, like transpiled code)
+backend-api/dist/
