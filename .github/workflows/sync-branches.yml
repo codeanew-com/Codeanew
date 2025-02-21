@@ -21,9 +21,11 @@ jobs:
       - name: Merge 'main' into other branches
         run: |
           branches=("dev" "backend/api" "frontend/admin" "frontend/public")
+
           for branch in "${branches[@]}"; do
             git fetch origin
             git checkout $branch
-            git merge origin/main --no-ff -m "Merge main into $branch"
+            git merge origin/main --allow-unrelated-histories --no-ff -m "Merge main into $branch"
             git push origin $branch
           done
+
