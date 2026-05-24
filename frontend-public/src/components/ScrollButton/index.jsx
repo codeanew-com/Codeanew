@@ -1,63 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons'; // Import the specific icon
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 const ScrollUpButton = () => {
-    const [isVisible, setIsVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-    };
+  useEffect(() => {
+    const handleScroll = () => setVisible(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    };
+  if (!visible) return null;
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    return (
-        isVisible && (
-            <button onClick={scrollToTop} style={styles.button}>
-                <FontAwesomeIcon icon={faAngleUp} style={styles.icon} />
-            </button>
-        )
-    );
-};
-
-const styles = {
-    button: {
-        position: 'fixed',
-        bottom: '90px',
-        right: '27px',
-        width: '40px',
-        height: '40px',
-        borderRadius: '50%',
-        backgroundColor: ' #e4ad35',
-        color: 'white',
-        border: 'none',
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-    },
-    icon: {
-        fontWeight: 200,
-        fontSize: '20px',
-        color: 'white',
-    },
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="fixed bottom-24 right-7 z-50 w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-gold outline-none"
+      style={{ background: 'linear-gradient(140deg, #e4ad35, #f1cf2e)' }}
+      aria-label="Scroll to top"
+    >
+      <FontAwesomeIcon icon={faAngleUp} className="text-gray-800 text-lg" />
+    </button>
+  );
 };
 
 export default ScrollUpButton;
