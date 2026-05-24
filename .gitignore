@@ -26,3 +26,6 @@ frontend-public/build/
 
 # Backend build files (if any, like transpiled code)
 backend-api/dist/
+
+# Brand File
+brand.html

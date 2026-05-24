@@ -2,56 +2,49 @@ import React from 'react';
 import CountUp from 'react-countup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward, faCalendarAlt, faUser } from '@fortawesome/free-solid-svg-icons';
-import './style.css';
+import CountersBg from '../../assets/img/img-5.png';
 
-const Counters = () => {
-    return (
-        <div className="counters">
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
-                        <div className="media counter-box align-items-start ">
-                            <div className="icon mr-3 icon-logo">
-                                <FontAwesomeIcon icon={faAward} size="1x" className="icon-color icon-logo" />
-                            </div>
-                            <div className="media-body">
-                                <h2 className="counter">
-                                    <CountUp end={967} className='font-colorz' duration={5} />
-                                </h2>
-                                <p>Awards Winning</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
-                        <div className="media counter-box align-items-start">
-                            <div className="icon mr-3 icon-logo">
-                                <FontAwesomeIcon icon={faCalendarAlt} size="1x" className="icon-color icon-logo" />
-                            </div>
-                            <div className="media-body">
-                                <h2 className="counter">
-                                    <CountUp end={24} className='font-colorz' duration={5} />
-                                </h2>
-                                <p>Done Projects</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
-                        <div className="media counter-box align-items-start">
-                            <div className="icon mr-3 icon-logo">
-                                <FontAwesomeIcon icon={faUser} size="1x" className="icon-color icon-logo" />
-                            </div>
-                            <div className="media-body">
-                                <h2 className="counter">
-                                    <CountUp end={120} className='font-colorz' duration={5} />
-                                </h2>
-                                <p>Happy Clients</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+const stats = [
+  { icon: faAward,       end: 967, label: 'Awards Winning'  },
+  { icon: faCalendarAlt, end: 24,  label: 'Done Projects'   },
+  { icon: faUser,        end: 120, label: 'Happy Clients'   },
+];
+
+const Counters = () => (
+  <section
+    className="relative py-24 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: `url(${CountersBg})` }}
+  >
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-gray-900/80" />
+
+    <div className="relative z-10 container mx-auto px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+        {stats.map(({ icon, end, label }) => (
+          <div
+            key={label}
+            className="flex items-start gap-5 group"
+          >
+            {/* Icon box */}
+            <div className="w-16 h-16 shrink-0 flex items-center justify-center rounded-lg bg-white/10 border border-white/20 group-hover:bg-white/15 transition-colors">
+              <FontAwesomeIcon icon={icon} className="icon-gold text-2xl" />
             </div>
-        </div>
-    );
-}
+
+            {/* Count + label */}
+            <div>
+              <p className="text-4xl font-bold text-white m-0 leading-none mb-1">
+                <CountUp end={end} duration={4} enableScrollSpy scrollSpyOnce />
+                <span className="text-gold-light">+</span>
+              </p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/75 m-0">
+                {label}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default Counters;
