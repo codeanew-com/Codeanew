@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Directus uploads (user-generated files)
+uploads/
+
+# Directus cache & temp
+.directus/
+cache/
+
+# Database files (keep schema + seeds, ignore the actual DB)
+database/*.db
+database/*.db-shm
+database/*.db-wal
+database/*.sqlite
+database/*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import heroBg from "../../assets/videos/video.mp4";
 import { getCalApi } from "@calcom/embed-react";
 import { submitBooking } from "../../api/services/booking";
 
@@ -40,9 +39,10 @@ const HeroBanner = () => {
 				autoPlay
 				playsInline
 				preload="auto"
+				poster="/img/hero-poster.jpg"
 			>
 				<source
-					src={heroBg}
+					src="/videos/video.mp4"
 					type="video/mp4"
 				/>
 			</video>
