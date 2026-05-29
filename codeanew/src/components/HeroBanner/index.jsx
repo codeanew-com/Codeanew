@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import heroBg from "../../assets/videos/video.mp4";
 import { getCalApi } from "@calcom/embed-react";
 import { submitBooking } from "../../api/services/booking";
 
@@ -41,7 +42,7 @@ const HeroBanner = () => {
 				preload="auto"
 			>
 				<source
-					src="https://api.codeanew.com/uploads/81e53e25-d559-480c-9da9-8cf2f2c446c3.5e3f45cae7b53aae8427.mp4"
+					src={heroBg}
 					type="video/mp4"
 				/>
 			</video>
