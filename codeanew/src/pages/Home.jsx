@@ -6,7 +6,6 @@ import OurTeam from "../components/OurTeam";
 import ServicesGrid from "../components/ServicesGrid";
 import SEO from "../components/SEO";
 import { pageSEO } from "../constants/seo";
-import Technologies from "../components/Technologies";
 
 const Home = () => {
   return (
