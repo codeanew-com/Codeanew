@@ -28,8 +28,5 @@ codeanew/dist/
 # Backup Folder
 codeanew/Backup
 
-# Css files
-codeanew/src/output.css
-
 # Brand File
 brand.html
