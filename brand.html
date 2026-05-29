@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>codeanew — Brand Guidelines 2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --amber:       #F0A500;
+  --amber-light: #E8C440;
+  --teal:        #4ECDC4;
+  --blue:        #2A8FD4;
+  --navy:        #0F1225;
+  --navy-mid:    #1A1F3A;
+  --navy-light:  #242942;
+  --slate:       #6B7DB3;
+  --white:       #ffffff;
+  --off-white:   #F7F7FB;
+  --gray-100:    #EDEDF3;
+  --gray-300:    #C4C4D4;
+  --gray-500:    #8888A0;
+  --text-dark:   #0F1225;
+  --text-mid:    #3A3D5C;
+  --text-light:  #6B7DB3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ── COVER ── */
+.cover {
+  background: var(--navy);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px 72px;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(240,165,0,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 40%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(78,205,196,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-logo { display: flex; align-items: center; gap: 14px; }
+.cover-logo svg { width: 52px; height: 52px; }
+.cover-logo-text .wordmark { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.02em; display: block; }
+.cover-logo-text .tagline  { font-size: 10px; letter-spacing: 0.18em; color: var(--slate); display: block; margin-top: 2px; text-transform: uppercase; }
+.cover-doc-label { font-size: 11px; letter-spacing: 0.16em; color: rgba(255,255,255,0.25); text-transform: uppercase; }
+
+.cover-center { position: relative; z-index: 1; }
+.cover-eyebrow { font-size: 12px; letter-spacing: 0.2em; color: var(--amber); text-transform: uppercase; font-weight: 500; margin-bottom: 20px; }
+.cover-title { font-size: 64px; font-weight: 800; color: #fff; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 24px; }
+.cover-title span { background: linear-gradient(90deg, var(--amber), var(--amber-light), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.cover-desc { font-size: 17px; color: rgba(255,255,255,0.45); max-width: 520px; line-height: 1.7; font-weight: 300; }
+
+.cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 1; }
+.cover-version { font-size: 12px; color: rgba(255,255,255,0.2); }
+.cover-gradient-bar { height: 3px; width: 200px; background: linear-gradient(90deg, var(--amber), var(--amber-light), var(--teal), var(--blue)); border-radius: 2px; }
+
+/* ── LAYOUT ── */
+.page { max-width: 900px; margin: 0 auto; padding: 80px 56px; }
+.page + .page { border-top: 1px solid var(--gray-100); }
+
+/* ── SECTION HEADER ── */
+.section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
+.section-num { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--amber); text-transform: uppercase; min-width: 28px; }
+.section-line { flex: 1; height: 1px; background: var(--gray-100); }
+.section-title { font-size: 28px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; margin-top: 6px; margin-bottom: 8px; }
+.section-desc { font-size: 15px; color: var(--text-light); line-height: 1.7; max-width: 620px; margin-bottom: 36px; }
+
+/* ── BRAND ESSENCE ── */
+.essence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+.essence-card { background: var(--navy); border-radius: 16px; padding: 28px; }
+.essence-card-label { font-size: 10px; letter-spacing: 0.18em; color: var(--amber); text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+.essence-card-text { font-size: 17px; font-weight: 500; color: #fff; line-height: 1.55; }
+
+.values-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.value-pill { background: #fff; border: 1px solid var(--gray-100); border-radius: 30px; padding: 8px 18px; font-size: 13px; font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 7px; }
+.value-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+/* ── LOGO ── */
+.logo-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.logo-panel { border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.logo-panel.on-white { background: #fff; border: 1px solid var(--gray-100); }
+.logo-panel.on-dark  { background: var(--navy); }
+.logo-panel.on-light { background: var(--off-white); border: 1px solid var(--gray-100); }
+.logo-panel.on-color { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); }
+.logo-panel-label { font-size: 11px; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase; font-weight: 500; }
+.logo-panel.on-dark .logo-panel-label,
+.logo-panel.on-color .logo-panel-label { color: var(--slate); }
+
+.logo-inline { display: flex; align-items: center; gap: 12px; }
+.logo-inline svg { width: 44px; height: 44px; }
+.logo-inline-text .wm { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; display: block; }
+.logo-inline-text .tl { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-top: 2px; }
+.logo-inline-text .wm.dark { color: var(--navy); }
+.logo-inline-text .wm.light { color: #fff; }
+.logo-inline-text .tl.dark { color: var(--slate); }
+.logo-inline-text .tl.light { color: rgba(255,255,255,0.4); }
+
+.logo-stacked { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.logo-stacked svg { width: 56px; height: 56px; }
+.logo-stacked-text { text-align: center; }
+.logo-stacked-text .wm { font-size: 22px; font-weight: 800; display: block; }
+.logo-stacked-text .tl { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-top: 3px; }
+
+.clearspace-box { background: var(--off-white); border: 1px dashed var(--gray-300); border-radius: 12px; padding: 32px; display: flex; align-items: center; justify-content: center; }
+.clearspace-inner { border: 2px dashed rgba(240,165,0,0.4); padding: 20px 24px; display: inline-flex; align-items: center; gap: 10px; position: relative; }
+.clearspace-inner::before { content: '← X →'; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--amber); letter-spacing: 0.08em; white-space: nowrap; }
+.clearspace-inner::after { content: '← X →'; position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--amber); letter-spacing: 0.08em; white-space: nowrap; }
+
+.dont-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.dont-card { border-radius: 12px; border: 1px solid var(--gray-100); overflow: hidden; }
+.dont-badge { background: #FEF2F2; color: #B91C1C; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 7px 14px; text-transform: uppercase; }
+.dont-preview { background: #fff; padding: 20px; min-height: 70px; display: flex; align-items: center; justify-content: center; }
+.dont-rule { font-size: 12px; color: var(--text-light); padding: 10px 14px; background: var(--off-white); line-height: 1.5; }
+
+/* ── COLORS ── */
+.color-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+.color-card { border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.color-swatch { height: 80px; }
+.color-info { padding: 12px 14px; background: #fff; border: 1px solid var(--gray-100); border-top: none; }
+.color-name { font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
+.color-hex  { font-family: 'Fira Code', monospace; font-size: 12px; color: var(--gray-500); }
+.color-role { font-size: 10px; color: var(--gray-300); margin-top: 4px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.gradient-showcase { background: var(--navy); border-radius: 16px; padding: 28px; margin-bottom: 24px; }
+.gradient-bar-full { height: 12px; border-radius: 6px; background: linear-gradient(90deg, #F0A500, #E8C440, #4ECDC4, #2A8FD4); margin-bottom: 16px; }
+.gradient-stops { display: flex; justify-content: space-between; }
+.gradient-stop-label { font-family: 'Fira Code', monospace; font-size: 11px; color: rgba(255,255,255,0.4); }
+
+.usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.usage-card { background: #fff; border: 1px solid var(--gray-100); border-radius: 12px; padding: 20px; }
+.usage-card-title { font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.usage-dot { width: 8px; height: 8px; border-radius: 50%; }
+.usage-list { list-style: none; }
+.usage-list li { font-size: 13px; color: var(--text-light); padding: 4px 0; border-bottom: 1px solid var(--gray-100); padding-left: 14px; position: relative; }
+.usage-list li::before { content: '—'; position: absolute; left: 0; color: var(--gray-300); }
+.usage-list li:last-child { border-bottom: none; }
+
+/* ── TYPOGRAPHY ── */
+.type-block { background: #fff; border: 1px solid var(--gray-100); border-radius: 16px; padding: 28px; margin-bottom: 16px; }
+.type-meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--gray-100); }
+.type-meta-badge { background: var(--navy); color: var(--amber); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 6px; text-transform: uppercase; }
+.type-meta-info { font-family: 'Fira Code', monospace; font-size: 12px; color: var(--gray-500); }
+.type-meta-link { font-size: 12px; color: var(--blue); margin-left: auto; }
+
+.scale-table { width: 100%; border-collapse: collapse; }
+.scale-table tr { border-bottom: 1px solid var(--gray-100); }
+.scale-table tr:last-child { border-bottom: none; }
+.scale-table td { padding: 12px 0; vertical-align: baseline; }
+.scale-table td:first-child { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--gray-500); width: 110px; padding-right: 16px; }
+.scale-table td:last-child { font-size: 11px; color: var(--gray-300); text-align: right; }
+
+.weight-showcase { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 20px; }
+.weight-item .sample { font-family: 'Manrope', sans-serif; font-size: 20px; color: var(--navy); line-height: 1.2; margin-bottom: 6px; }
+.weight-item .label  { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--gray-500); }
+
+.code-block { background: var(--navy); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+.code-block code { font-family: 'Fira Code', monospace; font-size: 13px; color: #4ECDC4; line-height: 1.8; white-space: pre; display: block; }
+
+/* ── VOICE & TONE ── */
+.tone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+.tone-card { background: #fff; border: 1px solid var(--gray-100); border-radius: 12px; padding: 20px; }
+.tone-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.tone-dot-green { width: 8px; height: 8px; border-radius: 50%; background: #10B981; }
+.tone-dot-red   { width: 8px; height: 8px; border-radius: 50%; background: #EF4444; }
+.tone-card-title { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+.tone-item { font-size: 13px; color: var(--text-light); padding: 7px 0; border-bottom: 1px solid var(--gray-100); line-height: 1.5; }
+.tone-item:last-child { border-bottom: none; }
+
+.voice-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+.pillar-card { background: var(--navy); border-radius: 12px; padding: 20px; }
+.pillar-icon { font-size: 22px; margin-bottom: 10px; }
+.pillar-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.pillar-desc { font-size: 12px; color: var(--slate); line-height: 1.5; }
+
+.copy-examples { display: flex; flex-direction: column; gap: 12px; }
+.copy-ex { background: #fff; border: 1px solid var(--gray-100); border-radius: 10px; padding: 16px 20px; display: flex; gap: 14px; }
+.copy-ex-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; flex-shrink: 0; height: fit-content; }
+.badge-do   { background: #D1FAE5; color: #065F46; }
+.badge-dont { background: #FEE2E2; color: #991B1B; }
+.copy-ex-text { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+/* ── SERVICES ── */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.service-card { background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px; }
+.service-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(240,165,0,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.service-icon svg { width: 20px; height: 20px; }
+.service-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.service-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+
+/* ── SPACING ── */
+.spacing-row { display: flex; align-items: flex-end; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.spacing-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.spacing-bar  { background: linear-gradient(180deg, var(--amber), var(--teal)); border-radius: 3px; width: 28px; }
+.spacing-val  { font-family: 'Fira Code', monospace; font-size: 12px; color: var(--navy); font-weight: 500; }
+.spacing-name { font-size: 11px; color: var(--gray-500); }
+
+.radius-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 24px; }
+.radius-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.radius-box { width: 60px; height: 60px; background: var(--navy); }
+.radius-val  { font-family: 'Fira Code', monospace; font-size: 12px; color: var(--navy); font-weight: 500; }
+.radius-name { font-size: 11px; color: var(--gray-500); }
+
+/* ── UI COMPONENTS ── */
+.comp-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+.comp-label { font-size: 11px; color: var(--gray-500); margin-bottom: 16px; letter-spacing: 0.08em; text-transform: uppercase; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; cursor: default; border: none; letter-spacing: 0.01em; }
+.btn-primary   { background: var(--amber); color: #fff; }
+.btn-secondary { background: transparent; border: 1.5px solid var(--amber); color: var(--amber); }
+.btn-ghost     { background: rgba(15,18,37,0.06); color: var(--navy); }
+.btn-danger    { background: #FEE2E2; color: #B91C1C; }
+.btn-dark      { background: var(--navy); color: #fff; }
+
+.badge-row-comp { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.badge-comp { display: inline-block; font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+.b-amber { background: rgba(240,165,0,0.12); color: #854F0B; }
+.b-teal  { background: rgba(78,205,196,0.12); color: #085041; }
+.b-blue  { background: rgba(42,143,212,0.12); color: #0C447C; }
+.b-red   { background: #FEE2E2; color: #991B1B; }
+.b-gray  { background: var(--gray-100); color: var(--text-mid); }
+
+/* ── IMAGERY ── */
+.imagery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.imagery-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-100); }
+.imagery-preview { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; }
+.imagery-label { background: #fff; padding: 12px 16px; font-size: 12px; color: var(--text-light); }
+
+/* ── DIGITAL SPECS ── */
+.spec-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-100); }
+.spec-table th { background: var(--navy); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.spec-table td { padding: 12px 16px; font-size: 13px; color: var(--text-mid); border-bottom: 1px solid var(--gray-100); }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table td:first-child { font-weight: 600; color: var(--navy); }
+.spec-table td code { font-family: 'Fira Code', monospace; font-size: 12px; color: var(--blue); background: var(--off-white); padding: 2px 6px; border-radius: 4px; }
+
+/* ── BACK COVER ── */
+.back-cover { background: var(--navy); padding: 80px 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 400px; position: relative; overflow: hidden; }
+.back-cover::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(240,165,0,0.06) 0%, transparent 60%); }
+.back-cover-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; position: relative; z-index: 1; }
+.back-cover-logo svg { width: 48px; height: 48px; }
+.back-cover-logo-text .wm { font-size: 32px; font-weight: 800; color: #fff; display: block; }
+.back-cover-logo-text .tl { font-size: 10px; letter-spacing: 0.18em; color: var(--slate); display: block; margin-top: 2px; text-transform: uppercase; }
+.back-tagline { font-size: 22px; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 32px; position: relative; z-index: 1; }
+.back-tagline strong { color: #fff; font-weight: 600; }
+.back-gradient-bar { height: 3px; width: 160px; background: linear-gradient(90deg, var(--amber), var(--teal)); border-radius: 2px; margin-bottom: 32px; position: relative; z-index: 1; }
+.back-contact { font-size: 14px; color: rgba(255,255,255,0.3); position: relative; z-index: 1; }
+.back-contact a { color: var(--amber); text-decoration: none; }
+.back-version { font-size: 11px; color: rgba(255,255,255,0.15); margin-top: 40px; position: relative; z-index: 1; }
+
+/* ── NAV (side dots) ── */
+.side-nav { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 100; }
+.side-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gray-300); cursor: pointer; transition: background 0.2s, transform 0.2s; }
+.side-dot:hover, .side-dot.active { background: var(--amber); transform: scale(1.4); }
+
+@media print {
+  .side-nav { display: none; }
+  .cover { min-height: 100vh; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDE NAV -->
+<nav class="side-nav" aria-label="Section navigation">
+  <div class="side-dot active" onclick="scrollTo(0,0)" title="Cover"></div>
+  <div class="side-dot" onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})" title="Brand Essence"></div>
+  <div class="side-dot" onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})" title="Logo"></div>
+  <div class="side-dot" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})" title="Color"></div>
+  <div class="side-dot" onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})" title="Typography"></div>
+  <div class="side-dot" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})" title="Voice & Tone"></div>
+  <div class="side-dot" onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})" title="Services"></div>
+  <div class="side-dot" onclick="document.getElementById('s7').scrollIntoView({behavior:'smooth'})" title="Spacing"></div>
+  <div class="side-dot" onclick="document.getElementById('s8').scrollIntoView({behavior:'smooth'})" title="UI Components"></div>
+  <div class="side-dot" onclick="document.getElementById('s9').scrollIntoView({behavior:'smooth'})" title="Digital Specs"></div>
+</nav>
+
+<!-- ════ COVER ════ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-logo">
+      <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0A500"/><stop offset="100%" stop-color="#E8C440"/></linearGradient>
+          <linearGradient id="cg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#2A8FD4"/></linearGradient>
+        </defs>
+        <path d="M8 16 Q8 8 16 8 L26 8" stroke="url(#cg1)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M8 36 Q8 44 16 44 L26 44" stroke="url(#cg1)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="12" cy="26" r="2.5" fill="url(#cg1)"/>
+        <path d="M18 36 L26 16 L34 36" stroke="url(#cg2)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M21 29 L31 29" stroke="url(#cg2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M44 16 Q44 8 36 8 L26 8" stroke="url(#cg2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M44 36 Q44 44 36 44 L26 44" stroke="url(#cg2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div class="cover-logo-text">
+        <span class="wordmark">codeanew</span>
+        <span class="tagline">Code Beyond Limits</span>
+      </div>
+    </div>
+    <span class="cover-doc-label">Brand Identity Guidelines</span>
+  </div>
+
+  <div class="cover-center">
+    <div class="cover-eyebrow">Official Brand Document</div>
+    <div class="cover-title">Brand<br><span>Guidelines</span></div>
+    <div class="cover-desc">This document defines every aspect of the codeanew brand — how we look, what we say, and how we present ourselves consistently across every touchpoint.</div>
+  </div>
+
+  <div class="cover-bottom">
+    <span class="cover-version">Version 1.0 · 2024</span>
+    <div class="cover-gradient-bar"></div>
+  </div>
+</div>
+
+<!-- ════ 01 BRAND ESSENCE ════ -->
+<div class="page" id="s1">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Brand Essence</div>
+  <div class="section-desc">Who codeanew is, what we stand for, and the values that drive every decision we make.</div>
+
+  <div class="essence-grid">
+    <div class="essence-card">
+      <div class="essence-card-label">Mission</div>
+      <div class="essence-card-text">To empower businesses with cutting-edge digital solutions — transforming ideas into powerful web, mobile, and cloud experiences.</div>
+    </div>
+    <div class="essence-card">
+      <div class="essence-card-label">Vision</div>
+      <div class="essence-card-text">A world where every great idea finds its code — built elegantly, shipped confidently, and scaled without limits.</div>
+    </div>
+    <div class="essence-card" style="background: linear-gradient(135deg, #1A1F3A, #0F1225);">
+      <div class="essence-card-label">Tagline</div>
+      <div class="essence-card-text" style="font-size: 22px; font-weight: 800; letter-spacing: -0.01em;">Code Beyond Limits.</div>
+    </div>
+    <div class="essence-card" style="background: rgba(240,165,0,0.08); border: 1px solid rgba(240,165,0,0.15);">
+      <div class="essence-card-label" style="color: var(--text-light);">Positioning</div>
+      <div class="essence-card-text" style="color: var(--navy);">codeanew is a full-service digital agency built for businesses that refuse to compromise on quality, speed, or innovation.</div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Brand Values</div>
+  <div class="values-row">
+    <div class="value-pill"><div class="value-dot" style="background: var(--amber);"></div>Innovative</div>
+    <div class="value-pill"><div class="value-dot" style="background: var(--teal);"></div>Precise</div>
+    <div class="value-pill"><div class="value-dot" style="background: var(--blue);"></div>Empowering</div>
+    <div class="value-pill"><div class="value-dot" style="background: #A78BFA;"></div>Collaborative</div>
+    <div class="value-pill"><div class="value-dot" style="background: #10B981;"></div>Reliable</div>
+    <div class="value-pill"><div class="value-dot" style="background: var(--slate);"></div>Forward-thinking</div>
+  </div>
+</div>
+
+<!-- ════ 02 LOGO ════ -->
+<div class="page" id="s2">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Logo System</div>
+  <div class="section-desc">The codeanew logomark combines curly braces — a universal coding symbol — with the letterform "A", representing innovation and structure interlocked. The gradient flows from amber to teal-blue: warm energy meeting cool precision.</div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Logo Variants</div>
+  <div class="logo-panels">
+    <div class="logo-panel on-white">
+      <div class="logo-inline">
+        <svg viewBox="0 0 52 52" fill="none" width="44" height="44">
+          <defs><linearGradient id="lg1a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0A500"/><stop offset="100%" stop-color="#E8C440"/></linearGradient><linearGradient id="lg1b" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#2A8FD4"/></linearGradient></defs>
+          <path d="M8 16 Q8 8 16 8 L26 8" stroke="url(#lg1a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q8 44 16 44 L26 44" stroke="url(#lg1a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <circle cx="12" cy="26" r="2.5" fill="url(#lg1a)"/>
+          <path d="M18 36 L26 16 L34 36" stroke="url(#lg1b)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M21 29 L31 29" stroke="url(#lg1b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 16 Q44 8 36 8 L26 8" stroke="url(#lg1b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 36 Q44 44 36 44 L26 44" stroke="url(#lg1b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="logo-inline-text">
+          <span class="wm dark">codeanew</span>
+          <span class="tl dark">Code Beyond Limits</span>
+        </div>
+      </div>
+      <div class="logo-panel-label">Horizontal — Light</div>
+    </div>
+    <div class="logo-panel on-dark">
+      <div class="logo-inline">
+        <svg viewBox="0 0 52 52" fill="none" width="44" height="44">
+          <defs><linearGradient id="lg2a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0A500"/><stop offset="100%" stop-color="#E8C440"/></linearGradient><linearGradient id="lg2b" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#2A8FD4"/></linearGradient></defs>
+          <path d="M8 16 Q8 8 16 8 L26 8" stroke="url(#lg2a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q8 44 16 44 L26 44" stroke="url(#lg2a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <circle cx="12" cy="26" r="2.5" fill="url(#lg2a)"/>
+          <path d="M18 36 L26 16 L34 36" stroke="url(#lg2b)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M21 29 L31 29" stroke="url(#lg2b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 16 Q44 8 36 8 L26 8" stroke="url(#lg2b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 36 Q44 44 36 44 L26 44" stroke="url(#lg2b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="logo-inline-text">
+          <span class="wm light">codeanew</span>
+          <span class="tl light">Code Beyond Limits</span>
+        </div>
+      </div>
+      <div class="logo-panel-label">Horizontal — Dark</div>
+    </div>
+    <div class="logo-panel on-light">
+      <div class="logo-stacked">
+        <svg viewBox="0 0 52 52" fill="none" width="56" height="56">
+          <defs><linearGradient id="lg3a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0A500"/><stop offset="100%" stop-color="#E8C440"/></linearGradient><linearGradient id="lg3b" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#2A8FD4"/></linearGradient></defs>
+          <path d="M8 16 Q8 8 16 8 L26 8" stroke="url(#lg3a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q8 44 16 44 L26 44" stroke="url(#lg3a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <circle cx="12" cy="26" r="2.5" fill="url(#lg3a)"/>
+          <path d="M18 36 L26 16 L34 36" stroke="url(#lg3b)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M21 29 L31 29" stroke="url(#lg3b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 16 Q44 8 36 8 L26 8" stroke="url(#lg3b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 36 Q44 44 36 44 L26 44" stroke="url(#lg3b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="logo-stacked-text">
+          <span class="wm" style="color: var(--navy);">codeanew</span>
+          <span class="tl" style="color: var(--slate);">Code Beyond Limits</span>
+        </div>
+      </div>
+      <div class="logo-panel-label">Stacked — Light</div>
+    </div>
+    <div class="logo-panel on-color">
+      <div class="logo-stacked">
+        <svg viewBox="0 0 52 52" fill="none" width="56" height="56">
+          <defs><linearGradient id="lg4a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0A500"/><stop offset="100%" stop-color="#E8C440"/></linearGradient><linearGradient id="lg4b" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#2A8FD4"/></linearGradient></defs>
+          <path d="M8 16 Q8 8 16 8 L26 8" stroke="url(#lg4a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q8 44 16 44 L26 44" stroke="url(#lg4a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <circle cx="12" cy="26" r="2.5" fill="url(#lg4a)"/>
+          <path d="M18 36 L26 16 L34 36" stroke="url(#lg4b)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M21 29 L31 29" stroke="url(#lg4b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 16 Q44 8 36 8 L26 8" stroke="url(#lg4b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M44 36 Q44 44 36 44 L26 44" stroke="url(#lg4b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="logo-stacked-text">
+          <span class="wm" style="color: #fff;">codeanew</span>
+          <span class="tl" style="color: rgba(255,255,255,0.4);">Code Beyond Limits</span>
+        </div>
+      </div>
+      <div class="logo-panel-label">Stacked — Dark</div>
+    </div>
+  </div>
+
+  <div style="margin: 28px 0 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Clear Space</div>
+  <div class="clearspace-box" style="margin-bottom: 28px;">
+    <div class="clearspace-inner">
+      <svg viewBox="0 0 52 52" fill="none" width="36" height="36">
+        <defs><linearGradient id="csa" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0A500"/><stop offset="100%" stop-color="#E8C440"/></linearGradient><linearGradient id="csb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#2A8FD4"/></linearGradient></defs>
+        <path d="M8 16 Q8 8 16 8 L26 8" stroke="url(#csa)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M8 36 Q8 44 16 44 L26 44" stroke="url(#csa)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="12" cy="26" r="2.5" fill="url(#csa)"/>
+        <path d="M18 36 L26 16 L34 36" stroke="url(#csb)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M21 29 L31 29" stroke="url(#csb)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M44 16 Q44 8 36 8 L26 8" stroke="url(#csb)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M44 36 Q44 44 36 44 L26 44" stroke="url(#csb)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span style="font-size: 20px; font-weight: 800; color: var(--navy);">codeanew</span>
+    </div>
+  </div>
+  <div style="font-size: 13px; color: var(--text-light); margin-bottom: 32px;">X = the cap height of the "c" in the wordmark. Always maintain this minimum clear space on all sides.</div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">What Not To Do</div>
+  <div class="dont-grid">
+    <div class="dont-card">
+      <div class="dont-badge">✕ Don't</div>
+      <div class="dont-preview"><span style="font-size: 18px; font-weight: 800; transform: rotate(-20deg); display: block; color: var(--navy);">codeanew</span></div>
+      <div class="dont-rule">Rotate or skew the logo</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕ Don't</div>
+      <div class="dont-preview"><span style="font-size: 18px; font-weight: 800; color: #cc0000;">codeanew</span></div>
+      <div class="dont-rule">Use unauthorized colors on the wordmark</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕ Don't</div>
+      <div class="dont-preview"><span style="font-size: 18px; font-weight: 800; font-family: Georgia, serif; color: var(--navy);">codeanew</span></div>
+      <div class="dont-rule">Use a different typeface for the wordmark</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕ Don't</div>
+      <div class="dont-preview" style="background: linear-gradient(135deg, #ff0080, #7928ca);"><span style="font-size: 18px; font-weight: 800; color: #fff;">codeanew</span></div>
+      <div class="dont-rule">Place on busy or conflicting backgrounds</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕ Don't</div>
+      <div class="dont-preview"><span style="font-size: 18px; font-weight: 800; color: var(--navy); opacity: 0.25;">codeanew</span></div>
+      <div class="dont-rule">Use the logo at very low opacity</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕ Don't</div>
+      <div class="dont-preview"><span style="font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: 0.3em;">codeanew</span></div>
+      <div class="dont-rule">Alter the letter spacing</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 03 COLOR ════ -->
+<div class="page" id="s3">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Color System</div>
+  <div class="section-desc">The palette is anchored in deep navy — authoritative and focused — with amber and teal-blue as the energetic gradient accent. These colors reflect the dual nature of code: structured logic meeting creative possibility.</div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Primary Colors</div>
+  <div class="color-grid" style="margin-bottom: 28px;">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #0F1225;"></div>
+      <div class="color-info"><div class="color-name">Deep Navy</div><div class="color-hex">#0F1225</div><div class="color-role">Background · Primary</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #1A1F3A;"></div>
+      <div class="color-info"><div class="color-name">Navy Mid</div><div class="color-hex">#1A1F3A</div><div class="color-role">Surface · Cards</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #F0A500;"></div>
+      <div class="color-info"><div class="color-name">Amber Gold</div><div class="color-hex">#F0A500</div><div class="color-role">Primary Accent · CTA</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #E8C440;"></div>
+      <div class="color-info"><div class="color-name">Amber Light</div><div class="color-hex">#E8C440</div><div class="color-role">Gradient End · Highlight</div></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Secondary Colors</div>
+  <div class="color-grid" style="margin-bottom: 28px;">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #4ECDC4;"></div>
+      <div class="color-info"><div class="color-name">Teal</div><div class="color-hex">#4ECDC4</div><div class="color-role">Secondary · Tech</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #2A8FD4;"></div>
+      <div class="color-info"><div class="color-name">Electric Blue</div><div class="color-hex">#2A8FD4</div><div class="color-role">Links · Gradient End</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #6B7DB3;"></div>
+      <div class="color-info"><div class="color-name">Slate Blue</div><div class="color-hex">#6B7DB3</div><div class="color-role">Subtext · Secondary</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #F7F7FB; border: 1px solid var(--gray-100);"></div>
+      <div class="color-info"><div class="color-name">Off White</div><div class="color-hex">#F7F7FB</div><div class="color-role">Page Background</div></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Gradient System</div>
+  <div class="gradient-showcase">
+    <div class="gradient-bar-full"></div>
+    <div class="gradient-stops">
+      <span class="gradient-stop-label">#F0A500</span>
+      <span class="gradient-stop-label">#E8C440</span>
+      <span class="gradient-stop-label">#4ECDC4</span>
+      <span class="gradient-stop-label">#2A8FD4</span>
+    </div>
+    <div style="margin-top: 14px; font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6;">The primary gradient always flows left to right, warm to cool. Used in the logomark, hero elements, and key visual accents only. Never apply to body text.</div>
+  </div>
+
+  <div class="usage-grid">
+    <div class="usage-card">
+      <div class="usage-card-title"><div class="usage-dot" style="background: var(--amber);"></div>Amber Gold — When to use</div>
+      <ul class="usage-list">
+        <li>Primary CTA buttons</li>
+        <li>Active states & highlights</li>
+        <li>Section label accents</li>
+        <li>Logomark gradient (start)</li>
+        <li>Important numbers & stats</li>
+      </ul>
+    </div>
+    <div class="usage-card">
+      <div class="usage-card-title"><div class="usage-dot" style="background: var(--teal);"></div>Teal / Blue — When to use</div>
+      <ul class="usage-list">
+        <li>Logomark gradient (end)</li>
+        <li>Links & interactive elements</li>
+        <li>Code blocks & technical UI</li>
+        <li>Secondary badges & tags</li>
+        <li>Informational callouts</li>
+      </ul>
+    </div>
+    <div class="usage-card">
+      <div class="usage-card-title"><div class="usage-dot" style="background: var(--navy);"></div>Deep Navy — When to use</div>
+      <ul class="usage-list">
+        <li>Primary backgrounds (dark mode)</li>
+        <li>Headings on light backgrounds</li>
+        <li>Navbar & footer</li>
+        <li>Code backgrounds</li>
+        <li>Dark UI cards</li>
+      </ul>
+    </div>
+    <div class="usage-card">
+      <div class="usage-card-title"><div class="usage-dot" style="background: var(--off-white);"></div>Off White — When to use</div>
+      <ul class="usage-list">
+        <li>Page backgrounds (light mode)</li>
+        <li>Section alternating backgrounds</li>
+        <li>Form field backgrounds</li>
+        <li>Card backgrounds (secondary)</li>
+        <li>Print backgrounds</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 04 TYPOGRAPHY ════ -->
+<div class="page" id="s4">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Typography</div>
+  <div class="section-desc">Two typefaces form the system. Manrope handles all display, UI, and body text — geometric, humanist, and exceptionally legible. Fira Code handles all technical and code contexts.</div>
+
+  <div class="type-block">
+    <div class="type-meta-row">
+      <span class="type-meta-badge">Primary</span>
+      <span class="type-meta-info">font-family: 'Manrope', sans-serif</span>
+      <span class="type-meta-link">fonts.google.com/specimen/Manrope</span>
+    </div>
+    <div style="font-family: 'Manrope', sans-serif; font-size: 52px; font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -0.03em; margin-bottom: 8px;">Manrope</div>
+    <div style="font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 300; color: var(--text-light); margin-bottom: 28px; letter-spacing: -0.01em;">The quick brown fox jumps over the lazy dog.</div>
+
+    <table class="scale-table">
+      <tr>
+        <td>H1 · 48px / 800</td>
+        <td><span style="font-family:'Manrope',sans-serif; font-size:38px; font-weight:800; color:var(--navy);">Page Heading</span></td>
+        <td>Hero titles only</td>
+      </tr>
+      <tr>
+        <td>H2 · 32px / 700</td>
+        <td><span style="font-family:'Manrope',sans-serif; font-size:28px; font-weight:700; color:var(--navy);">Section Heading</span></td>
+        <td>Main sections</td>
+      </tr>
+      <tr>
+        <td>H3 · 22px / 700</td>
+        <td><span style="font-family:'Manrope',sans-serif; font-size:20px; font-weight:700; color:var(--navy);">Sub Heading</span></td>
+        <td>Sub-sections, cards</td>
+      </tr>
+      <tr>
+        <td>H4 · 18px / 600</td>
+        <td><span style="font-family:'Manrope',sans-serif; font-size:17px; font-weight:600; color:var(--navy);">Card Title</span></td>
+        <td>Card & panel titles</td>
+      </tr>
+      <tr>
+        <td>Body · 16px / 400</td>
+        <td><span style="font-family:'Manrope',sans-serif; font-size:16px; font-weight:400; color:var(--text-mid);">Body paragraph text, line-height 1.7</span></td>
+        <td>All body copy</td>
+      </tr>
+      <tr>
+        <td>Small · 13px / 400</td>
+        <td><span style="font-family:'Manrope',sans-serif; font-size:13px; font-weight:400; color:var(--text-light);">Caption and metadata text</span></td>
+        <td>Captions, metadata</td>
+      </tr>
+      <tr>
+        <td>Label · 11px / 700</td>
+        <td><span style="font-family:'Manrope',sans-serif; font-size:11px; font-weight:700; color:var(--amber); letter-spacing:0.16em; text-transform:uppercase;">SECTION LABEL</span></td>
+        <td>Section eyebrows</td>
+      </tr>
+    </table>
+
+    <div style="margin-top: 24px; margin-bottom: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Weights in use</div>
+    <div class="weight-showcase">
+      <div class="weight-item"><div class="sample" style="font-weight:300;">codeanew</div><div class="label">300 Light</div></div>
+      <div class="weight-item"><div class="sample" style="font-weight:400;">codeanew</div><div class="label">400 Regular</div></div>
+      <div class="weight-item"><div class="sample" style="font-weight:500;">codeanew</div><div class="label">500 Medium</div></div>
+      <div class="weight-item"><div class="sample" style="font-weight:600;">codeanew</div><div class="label">600 Semibold</div></div>
+      <div class="weight-item"><div class="sample" style="font-weight:800;">codeanew</div><div class="label">800 Extrabold</div></div>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-meta-row">
+      <span class="type-meta-badge" style="background: var(--teal); color: #fff;">Code Font</span>
+      <span class="type-meta-info">font-family: 'Fira Code', monospace</span>
+      <span class="type-meta-link">fonts.google.com/specimen/Fira+Code</span>
+    </div>
+    <div style="font-family: 'Fira Code', monospace; font-size: 28px; color: var(--navy); margin-bottom: 8px;">Fira Code</div>
+    <div style="font-size: 13px; color: var(--text-light); margin-bottom: 16px;">Used exclusively for code blocks, technical values, HEX colors, font names, and developer-facing content.</div>
+    <div class="code-block">
+      <code>const createAnew = (idea) => {
+  return ship(idea).then(result => {
+    console.log('Launched: ', result);
+  });
+};</code>
+    </div>
+  </div>
+
+  <div style="margin-top: 20px; background: #fff; border: 1px solid var(--gray-100); border-radius: 12px; padding: 20px;">
+    <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase; margin-bottom: 12px;">Google Fonts Import</div>
+    <div class="code-block">
+      <code>&lt;link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"&gt;</code>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 05 VOICE & TONE ════ -->
+<div class="page" id="s5">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Voice & Tone</div>
+  <div class="section-desc">codeanew speaks with confidence and clarity. Our voice is direct and knowledgeable without being cold or overly technical. We balance professionalism with warmth — like a brilliant colleague, not a corporate manual.</div>
+
+  <div class="voice-pillars">
+    <div class="pillar-card">
+      <div class="pillar-icon">⚡</div>
+      <div class="pillar-name">Confident</div>
+      <div class="pillar-desc">We know what we're doing. We don't hedge or over-qualify.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🎯</div>
+      <div class="pillar-name">Clear</div>
+      <div class="pillar-desc">No jargon for jargon's sake. We explain complex things simply.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🤝</div>
+      <div class="pillar-name">Human</div>
+      <div class="pillar-desc">We're a team of real people who genuinely care about results.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🚀</div>
+      <div class="pillar-name">Forward</div>
+      <div class="pillar-desc">We always look ahead — solutions, not problems.</div>
+    </div>
+  </div>
+
+  <div class="tone-grid" style="margin-bottom: 24px;">
+    <div class="tone-card">
+      <div class="tone-card-header"><div class="tone-dot-green"></div><div class="tone-card-title">We are...</div></div>
+      <div class="tone-item">Confident and direct</div>
+      <div class="tone-item">Knowledgeable and expert</div>
+      <div class="tone-item">Friendly and approachable</div>
+      <div class="tone-item">Solution-focused</div>
+      <div class="tone-item">Concise and purposeful</div>
+    </div>
+    <div class="tone-card">
+      <div class="tone-card-header"><div class="tone-dot-red"></div><div class="tone-card-title">We are not...</div></div>
+      <div class="tone-item">Arrogant or dismissive</div>
+      <div class="tone-item">Overly formal or stiff</div>
+      <div class="tone-item">Filled with meaningless buzzwords</div>
+      <div class="tone-item">Vague or non-committal</div>
+      <div class="tone-item">Overly casual or slangy</div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Copy Examples</div>
+  <div class="copy-examples">
+    <div class="copy-ex">
+      <span class="copy-ex-badge badge-do">Do</span>
+      <div class="copy-ex-text">"We build high-performance web applications that scale with your business — from prototype to production."</div>
+    </div>
+    <div class="copy-ex">
+      <span class="copy-ex-badge badge-dont">Don't</span>
+      <div class="copy-ex-text">"We leverage cutting-edge synergies to facilitate next-generation digital transformation journeys for our valued stakeholders."</div>
+    </div>
+    <div class="copy-ex">
+      <span class="copy-ex-badge badge-do">Do</span>
+      <div class="copy-ex-text">"Let's turn your idea into a product people love. Book a free call and we'll map out exactly what you need."</div>
+    </div>
+    <div class="copy-ex">
+      <span class="copy-ex-badge badge-dont">Don't</span>
+      <div class="copy-ex-text">"We are pleased to offer you the opportunity to potentially engage with our consultation services at your earliest convenience."</div>
+    </div>
+    <div class="copy-ex">
+      <span class="copy-ex-badge badge-do">Do</span>
+      <div class="copy-ex-text">"Cloud infrastructure that stays up, scales fast, and costs less than you'd expect."</div>
+    </div>
+    <div class="copy-ex">
+      <span class="copy-ex-badge badge-dont">Don't</span>
+      <div class="copy-ex-text">"Our cloud solutions utilize robust, enterprise-grade methodologies to ensure maximum uptime paradigms."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 06 SERVICES ════ -->
+<div class="page" id="s6">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Services</div>
+  <div class="section-desc">codeanew offers a full spectrum of digital services. All service communications should lead with the outcome for the client, not the technical process.</div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="11" rx="2" stroke="#F0A500" stroke-width="1.5"/><path d="M7 16h6M10 13v3" stroke="#F0A500" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="service-name">Web Development</div>
+      <div class="service-desc">Full-stack web applications built with modern technology stacks. Scalable, fast, and database-driven.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 20 20" fill="none"><rect x="6" y="1" width="8" height="14" rx="2" stroke="#F0A500" stroke-width="1.5"/><path d="M9 17h2" stroke="#F0A500" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="service-name">Mobile App Development</div>
+      <div class="service-desc">Native and cross-platform apps for iOS and Android. Stable, performant, and user-focused.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L17 6v8L10 18L3 14V6L10 2Z" stroke="#F0A500" stroke-width="1.5"/><path d="M10 8v4M8 10h4" stroke="#F0A500" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="service-name">Cloud & DevOps</div>
+      <div class="service-desc">Infrastructure that scales with you. CI/CD pipelines, containerization, and cloud architecture.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#F0A500" stroke-width="1.5"/><path d="M2 8h16" stroke="#F0A500" stroke-width="1.5"/><circle cx="5" cy="6" r="0.8" fill="#F0A500"/><circle cx="8" cy="6" r="0.8" fill="#F0A500"/></svg></div>
+      <div class="service-name">Business Email Services</div>
+      <div class="service-desc">Professional email hosting via Microsoft Exchange and Google Workspace. Reliable, secure, and fully managed.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5l7-3 7 3v7c0 3-7 6-7 6S3 15 3 12V5z" stroke="#F0A500" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#F0A500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="service-name">UI/UX Design</div>
+      <div class="service-desc">User-centred design that converts. Wireframes, prototypes, and production-ready design systems.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#F0A500" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="#F0A500" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="service-name">Maintenance & Support</div>
+      <div class="service-desc">Ongoing support, updates, and performance monitoring. We stay with you after launch.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 07 SPACING & LAYOUT ════ -->
+<div class="page" id="s7">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Spacing & Layout</div>
+  <div class="section-desc">A base-8 spacing system creates visual rhythm and hierarchy across all touchpoints. Consistent space is what separates professional work from amateur.</div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Spacing Scale</div>
+  <div class="spacing-row">
+    <div class="spacing-item"><div class="spacing-bar" style="height: 4px;"></div><div class="spacing-val">4px</div><div class="spacing-name">2xs</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 8px;"></div><div class="spacing-val">8px</div><div class="spacing-name">xs</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 12px;"></div><div class="spacing-val">12px</div><div class="spacing-name">sm</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 16px;"></div><div class="spacing-val">16px</div><div class="spacing-name">md</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 24px;"></div><div class="spacing-val">24px</div><div class="spacing-name">lg</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 32px;"></div><div class="spacing-val">32px</div><div class="spacing-name">xl</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 48px;"></div><div class="spacing-val">48px</div><div class="spacing-name">2xl</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 64px;"></div><div class="spacing-val">64px</div><div class="spacing-name">3xl</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height: 96px;"></div><div class="spacing-val">96px</div><div class="spacing-name">4xl</div></div>
+  </div>
+
+  <div style="margin-bottom: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase;">Border Radius</div>
+  <div class="radius-row">
+    <div class="radius-item"><div class="radius-box" style="border-radius: 4px;"></div><div class="radius-val">4px</div><div class="radius-name">Subtle</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius: 8px;"></div><div class="radius-val">8px</div><div class="radius-name">Default</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius: 12px;"></div><div class="radius-val">12px</div><div class="radius-name">Card</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius: 16px;"></div><div class="radius-val">16px</div><div class="radius-name">Large</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius: 9999px; width: 100px; height: 40px;"></div><div class="radius-val">9999px</div><div class="radius-name">Pill</div></div>
+  </div>
+
+  <div style="background: #fff; border: 1px solid var(--gray-100); border-radius: 12px; padding: 20px;">
+    <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase; margin-bottom: 12px;">Layout Rules</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 13px; color: var(--text-mid);">
+      <div style="display: flex; gap: 8px;"><span style="color: var(--amber); font-weight: 700;">→</span> Max content width: 1200px</div>
+      <div style="display: flex; gap: 8px;"><span style="color: var(--amber); font-weight: 700;">→</span> Page margin: 48px (desktop), 24px (mobile)</div>
+      <div style="display: flex; gap: 8px;"><span style="color: var(--amber); font-weight: 700;">→</span> Minimum touch target: 44×44px</div>
+      <div style="display: flex; gap: 8px;"><span style="color: var(--amber); font-weight: 700;">→</span> Grid: 12-column, 24px gutter</div>
+      <div style="display: flex; gap: 8px;"><span style="color: var(--amber); font-weight: 700;">→</span> Section padding: 80px vertical (desktop)</div>
+      <div style="display: flex; gap: 8px;"><span style="color: var(--amber); font-weight: 700;">→</span> Card padding: 24–32px</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 08 UI COMPONENTS ════ -->
+<div class="page" id="s8">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">UI Components</div>
+  <div class="section-desc">A consistent set of components across all digital interfaces. Every element must work in both light and dark backgrounds.</div>
+
+  <div style="background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 24px; margin-bottom: 16px;">
+    <div class="comp-label">Buttons</div>
+    <div class="comp-row" style="margin-bottom: 16px;">
+      <div class="btn btn-primary">Get Started</div>
+      <div class="btn btn-secondary">Learn More</div>
+      <div class="btn btn-ghost">Documentation</div>
+      <div class="btn btn-dark">Book a Call</div>
+      <div class="btn btn-danger">Delete</div>
+    </div>
+    <div style="font-size: 12px; color: var(--text-light); line-height: 1.7;">All buttons use Manrope 600 (Semibold). Minimum size 44px height. Primary actions always in Amber Gold. Danger actions in red tint only — never solid red.</div>
+  </div>
+
+  <div style="background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 24px; margin-bottom: 16px;">
+    <div class="comp-label">Badges & Tags</div>
+    <div class="badge-row-comp">
+      <span class="badge-comp b-amber">New Feature</span>
+      <span class="badge-comp b-teal">Live</span>
+      <span class="badge-comp b-blue">In Progress</span>
+      <span class="badge-comp b-red">Error</span>
+      <span class="badge-comp b-gray">Archived</span>
+    </div>
+    <div style="font-size: 12px; color: var(--text-light);">Always use semi-transparent tinted backgrounds — never solid. Font weight 600, font size 12px.</div>
+  </div>
+
+  <div style="background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 24px; margin-bottom: 16px;">
+    <div class="comp-label">Form Elements</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px;">
+      <div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Full Name</div>
+        <div style="border: 1.5px solid var(--gray-300); border-radius: 8px; padding: 10px 14px; font-size: 14px; color: var(--text-mid); background: #fff;">John Smith</div>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Email Address</div>
+        <div style="border: 1.5px solid var(--amber); border-radius: 8px; padding: 10px 14px; font-size: 14px; color: var(--text-mid); background: #fff; box-shadow: 0 0 0 3px rgba(240,165,0,0.12);">john@company.com</div>
+      </div>
+    </div>
+    <div style="font-size: 12px; color: var(--text-light);">Default border: <code style="font-family:'Fira Code',monospace;">#C4C4D4</code> · Focus border: Amber Gold with 12% opacity ring · Error border: <code style="font-family:'Fira Code',monospace;">#EF4444</code></div>
+  </div>
+
+  <div style="background: var(--navy); border-radius: 14px; padding: 24px;">
+    <div class="comp-label" style="color: var(--slate);">Dark UI Elements</div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+      <div style="background: rgba(240,165,0,0.12); border: 1px solid rgba(240,165,0,0.25); border-radius: 8px; padding: 10px 18px; font-size: 14px; font-weight: 600; color: var(--amber);">Services</div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 18px; font-size: 14px; color: rgba(255,255,255,0.6);">Company</div>
+      <div style="background: var(--amber); border-radius: 8px; padding: 10px 20px; font-size: 14px; font-weight: 600; color: #fff;">Start a Project</div>
+    </div>
+    <div style="font-size: 12px; color: var(--slate);">On dark backgrounds, use amber-tinted borders for active states and subtle white-alpha for inactive states.</div>
+  </div>
+</div>
+
+<!-- ════ 09 DIGITAL SPECS ════ -->
+<div class="page" id="s9">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-title">Digital Specifications</div>
+  <div class="section-desc">Technical specifications for developers and designers implementing the codeanew brand across digital platforms.</div>
+
+  <table class="spec-table" style="margin-bottom: 28px;">
+    <thead>
+      <tr><th>Element</th><th>Specification</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Primary Font</td><td><code>Manrope</code> — weights 300, 400, 500, 600, 700, 800</td><td>Google Fonts — free, OFL licensed</td></tr>
+      <tr><td>Code Font</td><td><code>Fira Code</code> — weights 400, 500</td><td>Google Fonts — free, OFL licensed</td></tr>
+      <tr><td>Navy (primary bg)</td><td><code>#0F1225</code></td><td>RGB: 15, 18, 37</td></tr>
+      <tr><td>Amber (accent)</td><td><code>#F0A500</code></td><td>RGB: 240, 165, 0</td></tr>
+      <tr><td>Teal (secondary)</td><td><code>#4ECDC4</code></td><td>RGB: 78, 205, 196</td></tr>
+      <tr><td>Blue (gradient end)</td><td><code>#2A8FD4</code></td><td>RGB: 42, 143, 212</td></tr>
+      <tr><td>Slate (subtext)</td><td><code>#6B7DB3</code></td><td>RGB: 107, 125, 179</td></tr>
+      <tr><td>Off White (bg)</td><td><code>#F7F7FB</code></td><td>RGB: 247, 247, 251</td></tr>
+      <tr><td>Favicon</td><td>Logo mark only (no wordmark)</td><td>32×32px, 16×16px, SVG preferred</td></tr>
+      <tr><td>OG Image</td><td>1200×630px</td><td>Dark background with logo centered</td></tr>
+      <tr><td>Logo (horizontal)</td><td>Min width: 120px</td><td>Never display below 120px wide</td></tr>
+      <tr><td>Logo (icon only)</td><td>Min size: 24×24px</td><td>Use at 24px, 32px, 48px, 64px</td></tr>
+      <tr><td>Base font size</td><td>16px (1rem)</td><td>Never below 13px for body text</td></tr>
+      <tr><td>Line height (body)</td><td>1.7</td><td>1.2–1.3 for headings</td></tr>
+      <tr><td>Animation duration</td><td>150ms (micro), 300ms (page)</td><td>Ease-out for entrances</td></tr>
+      <tr><td>Border radius (card)</td><td>12–16px</td><td>8px for buttons and inputs</td></tr>
+    </tbody>
+  </table>
+
+  <div style="background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 24px; margin-bottom: 16px;">
+    <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase; margin-bottom: 12px;">CSS Custom Properties</div>
+    <div class="code-block">
+      <code>:root {
+  --color-navy:       #0F1225;
+  --color-navy-mid:   #1A1F3A;
+  --color-amber:      #F0A500;
+  --color-amber-lt:   #E8C440;
+  --color-teal:       #4ECDC4;
+  --color-blue:       #2A8FD4;
+  --color-slate:      #6B7DB3;
+  --color-off-white:  #F7F7FB;
+  --font-primary:     'Manrope', sans-serif;
+  --font-code:        'Fira Code', monospace;
+  --gradient-brand:   linear-gradient(90deg, #F0A500, #E8C440, #4ECDC4, #2A8FD4);
+}</code>
+    </div>
+  </div>
+
+  <div style="background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 24px;">
+    <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray-500); text-transform: uppercase; margin-bottom: 12px;">Social Media Sizing</div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 13px;">
+      <div style="background: var(--off-white); border-radius: 8px; padding: 14px;">
+        <div style="font-weight: 700; color: var(--navy); margin-bottom: 4px;">Profile Photo</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 12px; color: var(--text-light);">400×400px</div>
+        <div style="font-size: 12px; color: var(--text-light); margin-top: 4px;">Logo mark only, navy background</div>
+      </div>
+      <div style="background: var(--off-white); border-radius: 8px; padding: 14px;">
+        <div style="font-weight: 700; color: var(--navy); margin-bottom: 4px;">Cover / Banner</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 12px; color: var(--text-light);">1500×500px</div>
+        <div style="font-size: 12px; color: var(--text-light); margin-top: 4px;">Horizontal logo on navy bg</div>
+      </div>
+      <div style="background: var(--off-white); border-radius: 8px; padding: 14px;">
+        <div style="font-weight: 700; color: var(--navy); margin-bottom: 4px;">Post (Square)</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 12px; color: var(--text-light);">1080×1080px</div>
+        <div style="font-size: 12px; color: var(--text-light); margin-top: 4px;">Content-first, logo in corner</div>
+      </div>
+      <div style="background: var(--off-white); border-radius: 8px; padding: 14px;">
+        <div style="font-weight: 700; color: var(--navy); margin-bottom: 4px;">Story / Reel</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 12px; color: var(--text-light);">1080×1920px</div>
+        <div style="font-size: 12px; color: var(--text-light); margin-top: 4px;">9:16 ratio, safe zone 250px</div>
+      </div>
+      <div style="background: var(--off-white); border-radius: 8px; padding: 14px;">
+        <div style="font-weight: 700; color: var(--navy); margin-bottom: 4px;">LinkedIn Post</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 12px; color: var(--text-light);">1200×627px</div>
+        <div style="font-size: 12px; color: var(--text-light); margin-top: 4px;">Horizontal layout preferred</div>
+      </div>
+      <div style="background: var(--off-white); border-radius: 8px; padding: 14px;">
+        <div style="font-weight: 700; color: var(--navy); margin-bottom: 4px;">Email Header</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 12px; color: var(--text-light);">600px wide</div>
+        <div style="font-size: 12px; color: var(--text-light); margin-top: 4px;">Logo max 180px wide in email</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ BACK COVER ════ -->
+<div class="back-cover">
+  <div class="back-cover-logo">
+    <svg viewBox="0 0 52 52" fill="none" width="48" height="48">
+      <defs>
+        <linearGradient id="bcg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0A500"/><stop offset="100%" stop-color="#E8C440"/></linearGradient>
+        <linearGradient id="bcg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#2A8FD4"/></linearGradient>
+      </defs>
+      <path d="M8 16 Q8 8 16 8 L26 8" stroke="url(#bcg1)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M8 36 Q8 44 16 44 L26 44" stroke="url(#bcg1)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <circle cx="12" cy="26" r="2.5" fill="url(#bcg1)"/>
+      <path d="M18 36 L26 16 L34 36" stroke="url(#bcg2)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M21 29 L31 29" stroke="url(#bcg2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M44 16 Q44 8 36 8 L26 8" stroke="url(#bcg2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M44 36 Q44 44 36 44 L26 44" stroke="url(#bcg2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+    </svg>
+    <div class="back-cover-logo-text">
+      <span class="wm">codeanew</span>
+      <span class="tl">Code Beyond Limits</span>
+    </div>
+  </div>
+  <div class="back-tagline">Questions about these guidelines?<br><strong>Let's talk.</strong></div>
+  <div class="back-gradient-bar"></div>
+  <div class="back-contact">Visit us at <a href="https://codeanew.com">codeanew.com</a></div>
+  <div class="back-version">Brand Guidelines v1.0 · 2024 · All rights reserved codeanew</div>
+</div>
+
+<script>
+const dots = document.querySelectorAll('.side-dot');
+const sections = ['cover', 's1','s2','s3','s4','s5','s6','s7','s8','s9'];
+const targets = [document.querySelector('.cover'), ...sections.slice(1).map(id => document.getElementById(id))];
+
+window.addEventListener('scroll', () => {
+  let current = 0;
+  targets.forEach((el, i) => {
+    if (el && window.scrollY >= el.offsetTop - 200) current = i;
+  });
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+});
+</script>
+</body>
+</html>
