@@ -1,1 +1,0 @@
-export const constaUs = ['Web Developments', 'Cloud and DevOps', 'Business Email Services', 'Mobile App Development'];
