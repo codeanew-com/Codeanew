@@ -11,6 +11,7 @@ npm-debug.log*
 
 # Environment files
 .env
+.env.production
 
 # OS generated files
 .DS_Store
@@ -21,11 +22,11 @@ Thumbs.db
 .idea/
 
 # Frontend build files (if any)
-frontend-admin/build/
-frontend-public/build/
+codeanew/build/
+codeanew/dist/
 
-# Backend build files (if any, like transpiled code)
-backend-api/dist/
+# Backup Folder
+codeanew/Backup
 
 # Brand File
 brand.html
