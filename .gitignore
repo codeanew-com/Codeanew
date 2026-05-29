@@ -1,6 +1,5 @@
 # Node.js dependencies
 /node_modules/
-codeanew/node_modules/
 
 # Logs
 *.log
@@ -28,9 +27,6 @@ codeanew/dist/
 
 # Backup Folder
 codeanew/Backup
-
-# Css files
-codeanew/src/output.css
 
 # Brand File
 brand.html
