@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — codeanew
+  Generated: Tue, 26 May 2026 02:38:14 GMT
+  Total URLs: 15
+
+  DO NOT edit manually — regenerate using:
+  npm run sitemap
+-->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- STATIC PAGES                        -->
+  <!-- ═══════════════════════════════════ -->
+  
+  <!-- Home — highest priority -->
+  <url>
+    <loc>https://codeanew.com/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Services — high value conversion page -->
+  <url>
+    <loc>https://codeanew.com/services</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Blog listing — updates as posts are added -->
+  <url>
+    <loc>https://codeanew.com/blog</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Contact — high conversion, stable content -->
+  <url>
+    <loc>https://codeanew.com/contact-us</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Our Work listing — updates as projects are added -->
+  <url>
+    <loc>https://codeanew.com/our-work</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- About — team changes occasionally -->
+  <url>
+    <loc>https://codeanew.com/about</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Our Process — stable, rarely changes -->
+  <url>
+    <loc>https://codeanew.com/our-process</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Privacy — changes only when policy updates -->
+  <url>
+    <loc>https://codeanew.com/privacy</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- BLOG POSTS (5)                     -->
+  <!-- ═══════════════════════════════════ -->
+  
+  <!-- Blog: custom-crm-development-uae -->
+  <url>
+    <loc>https://codeanew.com/blog/custom-crm-development-uae</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog: ecommerce-development-dubai -->
+  <url>
+    <loc>https://codeanew.com/blog/ecommerce-development-dubai</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog: erp-software-small-business-uae -->
+  <url>
+    <loc>https://codeanew.com/blog/erp-software-small-business-uae</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog: mobile-app-development-cost-uae -->
+  <url>
+    <loc>https://codeanew.com/blog/mobile-app-development-cost-uae</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog: react-development-uae -->
+  <url>
+    <loc>https://codeanew.com/blog/react-development-uae</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- PROJECTS (2)                    -->
+  <!-- ═══════════════════════════════════ -->
+  
+  <!-- Project: custom-crm-uae -->
+  <url>
+    <loc>https://codeanew.com/our-work/custom-crm-uae</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Project: codeanew-platform -->
+  <url>
+    <loc>https://codeanew.com/our-work/codeanew-platform</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

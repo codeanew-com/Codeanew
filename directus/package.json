@@ -1,0 +1,21 @@
+{
+  "name": "directus",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "directus start",
+    "bootstrap": "directus bootstrap",
+    "seed": "node --experimental-vm-modules database/seeds/seed.js"
+  },
+  "dependencies": {
+    "axios": "^1.16.1",
+    "directus": "latest",
+    "dotenv": "^17.4.2",
+    "form-data": "^4.0.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

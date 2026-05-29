@@ -4,16 +4,17 @@
   "description": "Codeanew's official website repository. Contains the source code, assets, and configurations for Codeanew's business website, showcasing services, portfolio, and contact information.",
   "private": true,
   "workspaces": [
-    "backend-api",
-    "frontend-admin",
-    "frontend-public"
+    "codeanew",
+    "directus"
   ],
   "scripts": {
-    "start:backend": "cd backend-api && npm run dev",
-    "start:admin": "cd frontend-admin && npm start",
-    "start:public": "cd frontend-public && HOST=0.0.0.0 npm start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tw:public": "tailwindcss -i ./frontend-public/src/index.css -o ./frontend-public/src/output.css --watch"
+    "start:public": "npm run start -w codeanew",
+    "tw:public": "tailwindcss -i ./codeanew/src/index.css -o ./codeanew/src/output.css --watch",
+    "start:directus": "npm run start -w directus",
+    "start:directus:bootstrap": "npm run bootstrap -w directus",
+    "seed:directus": "npm run seed -w directus",
+    "sitemap": "npm run sitemap -w codeanew",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
