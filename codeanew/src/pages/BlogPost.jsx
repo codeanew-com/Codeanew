@@ -11,6 +11,7 @@ const renderContent = (content) => {
     .replace(/## (.*)/g, '<h2 class="text-2xl font-bold text-heading mt-8 mb-3">$1</h2>')
     .replace(/### (.*)/g, '<h3 class="text-lg font-bold text-heading mt-6 mb-2">$1</h3>')
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-heading font-semibold">$1</strong>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline">$1</a>')
     .replace(/^- (.*)/gm, '<li class="text-muted ml-4 list-disc leading-relaxed">$1</li>')
     .replace(/\n\n/g, '</p><p class="text-muted leading-relaxed mb-4">')
     .replace(/^/, '<p class="text-muted leading-relaxed mb-4">')
@@ -105,7 +106,7 @@ const BlogPost = () => {
 
       <div
         className="prose max-w-none"
-        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(renderContent(post.content)) }}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(renderContent(post.content), { ADD_ATTR: ["target"] }) }}
       />
 
       <hr className="border-gray-100 my-12" />
