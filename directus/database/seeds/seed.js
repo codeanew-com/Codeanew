@@ -56,7 +56,7 @@ const uploadImage = async (filePath, filename) => {
 const seedBlogPosts = async () => {
   console.log("\nSeeding blog posts...");
   const { blogs } = await import(
-    "../../../frontend-public/src/constants/blogs.js"
+    "../../../codeanew/src/constants/blogs.js"
   );
   for (const post of blogs) {
     await api().post("/items/blog_posts", {
@@ -77,7 +77,7 @@ const seedBlogPosts = async () => {
 const seedProjects = async () => {
   console.log("\nSeeding projects...");
   const { projects } = await import(
-    "../../../frontend-public/src/constants/projects.js"
+    "../../../codeanew/src/constants/projects.js"
   );
   for (const project of projects) {
     await api().post("/items/projects", {
@@ -104,12 +104,12 @@ const seedProjects = async () => {
 const seedTeamMembers = async () => {
   console.log("\nSeeding team members...");
   const { members } = await import(
-    "../../../frontend-public/src/constants/team.js"
+    "../../../codeanew/src/constants/team.js"
   );
 
   const photoDir = path.resolve(
     __dirname,
-    "../../../frontend-public/src/assets/img/team"
+    "../../../codeanew/src/assets/img/team"
   );
 
   for (const member of members) {
