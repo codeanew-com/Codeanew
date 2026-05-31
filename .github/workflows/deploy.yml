@@ -32,6 +32,7 @@ jobs:
         run: npm run build -w codeanew
         env:
           VITE_DIRECTUS_URL: ${{ secrets.VITE_DIRECTUS_URL }}
+          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
 
       - name: Clear old build on server
         uses: appleboy/ssh-action@v1.0.3
