@@ -6,7 +6,7 @@ const HeroBanner = () => {
 		(async () => {
 			const cal = await getCalApi({ namespace: "30min" });
 			cal("ui", {
-				styles: { branding: { brandColor: "#ffffff" } },
+				cssVarsPerTheme: { light: { "cal-brand": "#ffffff" }, dark: { "cal-brand": "#ffffff" } },
 				hideEventTypeDetails: false,
 				layout: "month_view",
 			});
