@@ -90,7 +90,7 @@ const Contact = () => {
 		(async () => {
 			const cal = await getCalApi({ namespace: "30min" });
 			cal("ui", {
-				styles: { branding: { brandColor: "#F0A500" } },
+				cssVarsPerTheme: { light: { "cal-brand": "#F0A500" }, dark: { "cal-brand": "#F0A500" } },
 				hideEventTypeDetails: false,
 				layout: "month_view",
 			});
