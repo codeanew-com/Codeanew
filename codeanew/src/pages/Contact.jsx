@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Select from "react-select";
@@ -50,6 +51,9 @@ const selectStyles = {
 };
 
 const Contact = () => {
+	const [turnstileToken, setTurnstileToken] = useState(null);
+	const turnstileRef = useRef(null);
+
 	useEffect(() => {
 		(async () => {
 			const cal = await getCalApi({ namespace: "30min" });
@@ -91,6 +95,11 @@ const Contact = () => {
 								}}
 								validationSchema={validationSchema}
 								onSubmit={async (values, { setSubmitting, resetForm }) => {
+									if (!turnstileToken) {
+										toast.error("Security check not ready. Please wait a moment.");
+										setSubmitting(false);
+										return;
+									}
 									try {
 										await submitContact({
 											fullname: values.fullname,
@@ -99,11 +108,15 @@ const Contact = () => {
 											service: values.service,
 											budget: values.budget || null,
 											message: values.message || null,
-										});
+										}, turnstileToken);
 										toast.success("Message sent successfully!");
 										resetForm();
+										setTurnstileToken(null);
+										turnstileRef.current?.reset();
 									} catch (error) {
 										toast.error("There was an error submitting the form!");
+										turnstileRef.current?.reset();
+										setTurnstileToken(null);
 									}
 									setSubmitting(false);
 								}}
@@ -221,10 +234,18 @@ const Contact = () => {
 												/>
 											</div>
 
+											<Turnstile
+												ref={turnstileRef}
+												siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+												onSuccess={(token) => setTurnstileToken(token)}
+												onExpire={() => setTurnstileToken(null)}
+												options={{ size: "invisible" }}
+											/>
+
 											<button
 												type="submit"
 												className="btn-theme w-full py-4 mt-2"
-												disabled={isSubmitting}
+												disabled={isSubmitting || !turnstileToken}
 											>
 												{isSubmitting ? (
 													<>
