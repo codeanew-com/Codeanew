@@ -8,10 +8,10 @@
     "directus"
   ],
   "scripts": {
-    "start:public": "npm run start -w codeanew",
-    "tw:public": "tailwindcss -i ./codeanew/src/index.css -o ./codeanew/src/output.css --watch",
-    "start:directus": "npm run start -w directus",
-    "start:directus:bootstrap": "npm run bootstrap -w directus",
+    "codeanew": "npm run start -w codeanew",
+    "tw:codeanew": "tailwindcss -i ./codeanew/src/index.css -o ./codeanew/src/output.css --watch",
+    "directus": "npm run start -w directus",
+    "directus:bootstrap": "npm run bootstrap -w directus",
     "seed:directus": "npm run seed -w directus",
     "sitemap": "npm run sitemap -w codeanew",
     "test": "echo \"Error: no test specified\" && exit 1"
