@@ -82,30 +82,24 @@ const formatUrl = ({ url, lastmod, changefreq, priority, comment }) => `
   </url>`;
 
 const pingSearchEngines = async () => {
-  // Uncomment on production to notify search engines
-  // try {
-  //   await axios.get(
-  //     `https://www.google.com/ping?sitemap=${SITE_URL}/sitemap.xml`
-  //   );
-  //   console.log("  ✓ Google pinged");
-  // } catch {
-  //   console.warn("  ⚠ Google ping failed");
-  // }
-  // try {
-  //   await axios.get(
-  //     `https://www.bing.com/ping?sitemap=${SITE_URL}/sitemap.xml`
-  //   );
-  //   console.log("  ✓ Bing pinged");
-  // } catch {
-  //   console.warn("  ⚠ Bing ping failed");
-  // }
+  try {
+    await axios.get(`https://www.google.com/ping?sitemap=${SITE_URL}/sitemap.xml`);
+    console.log("  ✓ Google pinged");
+  } catch {
+    console.warn("  ⚠ Google ping failed");
+  }
+  try {
+    await axios.get(`https://www.bing.com/ping?sitemap=${SITE_URL}/sitemap.xml`);
+    console.log("  ✓ Bing pinged");
+  } catch {
+    console.warn("  ⚠ Bing ping failed");
+  }
 };
 
 const generate = async () => {
   console.log("\n🗺  Generating sitemap...\n");
 
   try {
-    // ─── Fetch blog posts from Directus ───
     console.log("  Fetching blog posts...");
     const blogRes = await axios.get(`${DIRECTUS_URL}/items/blog_posts`, {
       params: {
@@ -117,7 +111,6 @@ const generate = async () => {
     const blogs = blogRes.data.data || [];
     console.log(`  ✓ Found ${blogs.length} blog posts`);
 
-    // ─── Fetch projects from Directus ───
     console.log("  Fetching projects...");
     const projectRes = await axios.get(`${DIRECTUS_URL}/items/projects`, {
       params: {
@@ -129,7 +122,6 @@ const generate = async () => {
     const projects = projectRes.data.data || [];
     console.log(`  ✓ Found ${projects.length} projects`);
 
-    // ─── Build URL blocks ───
     const staticUrls = staticPages.map(formatUrl);
 
     const blogUrls = blogs.map((post) => `
@@ -158,7 +150,6 @@ const generate = async () => {
     <priority>0.6</priority>
   </url>`);
 
-    // ─── Assemble sitemap ───
     const totalUrls = staticUrls.length + blogUrls.length + projectUrls.length;
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -194,7 +185,6 @@ const generate = async () => {
 
 </urlset>`;
 
-    // ─── Write file ───
     fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
     fs.writeFileSync(OUTPUT, xml, "utf-8");
 
@@ -205,7 +195,6 @@ const generate = async () => {
     console.log(`   Projects   : ${projectUrls.length}`);
     console.log(`   Saved to   : ${OUTPUT}\n`);
 
-    // ─── Ping search engines ───
     await pingSearchEngines();
 
   } catch (err) {

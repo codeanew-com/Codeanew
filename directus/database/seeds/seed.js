@@ -16,7 +16,6 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 let token = null;
 
-// ─── Auth ───
 const login = async () => {
   const res = await axios.post(`${DIRECTUS_URL}/auth/login`, {
     email: ADMIN_EMAIL,
@@ -35,7 +34,6 @@ const api = () =>
     },
   });
 
-// ─── Upload image file ───
 const uploadImage = async (filePath, filename) => {
   if (!fs.existsSync(filePath)) {
     console.warn(`  ⚠ File not found: ${filePath}`);
@@ -52,12 +50,9 @@ const uploadImage = async (filePath, filename) => {
   return res.data.data.id;
 };
 
-// ─── Seed blog posts ───
 const seedBlogPosts = async () => {
   console.log("\nSeeding blog posts...");
-  const { blogs } = await import(
-    "../../../codeanew/src/constants/blogs.js"
-  );
+  const { blogs } = await import("./constants/blogs.js");
   for (const post of blogs) {
     await api().post("/items/blog_posts", {
       status: "published",
@@ -73,12 +68,9 @@ const seedBlogPosts = async () => {
   }
 };
 
-// ─── Seed projects ───
 const seedProjects = async () => {
   console.log("\nSeeding projects...");
-  const { projects } = await import(
-    "../../../codeanew/src/constants/projects.js"
-  );
+  const { projects } = await import("./constants/projects.js");
   for (const project of projects) {
     await api().post("/items/projects", {
       status: "published",
@@ -100,17 +92,11 @@ const seedProjects = async () => {
   }
 };
 
-// ─── Seed team members with photos ───
 const seedTeamMembers = async () => {
   console.log("\nSeeding team members...");
-  const { members } = await import(
-    "../../../codeanew/src/constants/team.js"
-  );
+  const { members } = await import("./constants/team.js");
 
-  const photoDir = path.resolve(
-    __dirname,
-    "../../../codeanew/src/assets/img/team"
-  );
+  const photoDir = path.resolve(__dirname, "./img/team");
 
   for (const member of members) {
     console.log(`  Uploading photo for ${member.name}...`);
@@ -131,7 +117,6 @@ const seedTeamMembers = async () => {
   }
 };
 
-// ─── Main ───
 const seed = async () => {
   try {
     await login();

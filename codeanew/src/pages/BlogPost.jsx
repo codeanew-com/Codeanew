@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router";
+import DOMPurify from "dompurify";
 import { getBlogPost, getBlogPosts } from "../api/services/blog";
 import { getImageUrl } from "../api/helpers";
 import SEO from "../components/SEO";
@@ -104,7 +105,7 @@ const BlogPost = () => {
 
       <div
         className="prose max-w-none"
-        dangerouslySetInnerHTML={{ __html: renderContent(post.content) }}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(renderContent(post.content)) }}
       />
 
       <hr className="border-gray-100 my-12" />

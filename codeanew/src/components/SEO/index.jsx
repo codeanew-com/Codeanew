@@ -31,7 +31,7 @@ const SEO = ({ title, description, ogImage, ogType = "website", canonicalUrl }) 
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:description" content={siteDescription} />
       <meta name="twitter:image" content={siteImage} />
-      <meta name="msvalidate.01" content="BING_VERIFICATION_CODE" />
+      <meta name="msvalidate.01" content="D375793963572A4406AD8B4A286F88C8" />
     </>
   );
 };
