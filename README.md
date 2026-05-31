@@ -226,6 +226,52 @@ git sparse-checkout disable
 
 ---
 
+## Maintenance Mode (codeanew.com)
+
+Maintenance mode is handled at the Nginx level. It serves a branded 503 page with a `Retry-After` header so search engines do not deindex the site.
+
+### Nginx Config
+
+The following is added to `/etc/nginx/sites-available/codeanew.com` inside the main `server` block:
+
+```nginx
+# Maintenance mode — check inside location / to allow static assets to load
+location / {
+    if (-f /etc/nginx/maintenance_codeanew) {
+        return 503;
+    }
+    try_files $uri $uri/ /index.html;
+}
+
+error_page 503 @maintenance;
+location @maintenance {
+    root /var/www/codeanew.com;
+    rewrite ^(.*)$ /maintenance.html break;
+    add_header Retry-After 3600;
+    add_header Cache-Control "no-store";
+}
+```
+
+The flag file is `/etc/nginx/maintenance_codeanew`. Its existence triggers maintenance mode.
+
+### Turn Maintenance ON
+
+```bash
+sudo touch /etc/nginx/maintenance_codeanew && sudo systemctl reload nginx
+```
+
+### Turn Maintenance OFF
+
+```bash
+sudo rm /etc/nginx/maintenance_codeanew && sudo systemctl reload nginx
+```
+
+### Maintenance Page
+
+The branded maintenance page is at `codeanew/public/maintenance.html` and is deployed automatically via CI/CD. The logo is embedded as base64 so it loads without any external requests during maintenance.
+
+---
+
 ## Quick Memory
 
 The command I forgot was:
