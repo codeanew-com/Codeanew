@@ -128,7 +128,30 @@ const PrivacyPolicy = () => {
             </p>
           </Section>
 
-          <Section number="7" title="Data Transfers">
+          <Section number="7" title="Security & Bot Protection">
+            <p className="text-muted">
+              We use Cloudflare Turnstile on our contact forms to protect against spam and automated abuse. Turnstile operates invisibly in the background and does not require any user interaction. By using our contact form, your browser may send signals to Cloudflare's servers for verification purposes. For details, please refer to the{" "}
+              <a
+                href="https://www.cloudflare.com/privacypolicy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold hover:underline"
+              >
+                Cloudflare Privacy Policy
+              </a>{" "}
+              and the{" "}
+              <a
+                href="https://www.cloudflare.com/turnstile-privacy-addendum/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold hover:underline"
+              >
+                Turnstile Privacy Addendum
+              </a>.
+            </p>
+          </Section>
+
+          <Section number="8" title="Data Transfers">
             <p className="text-muted">
               Your personal information may be transferred to and stored at
               locations outside the UAE. We ensure adequate protection measures
@@ -136,14 +159,14 @@ const PrivacyPolicy = () => {
             </p>
           </Section>
 
-          <Section number="8" title="Changes to This Privacy Policy">
+          <Section number="9" title="Changes to This Privacy Policy">
             <p className="text-muted">
               We may update this Privacy Policy from time to time. We encourage
               you to review this page regularly.
             </p>
           </Section>
 
-          <Section number="9" title="Contact Us">
+          <Section number="10" title="Contact Us">
             <div className="bg-bg-light rounded-xl p-5 text-sm text-muted space-y-1">
               <p className="m-0">
                 <strong className="text-heading">Email:</strong>{" "}

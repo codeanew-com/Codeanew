@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
-import { submitBooking } from "../../api/services/booking";
 
 const HeroBanner = () => {
 	useEffect(() => {
@@ -11,24 +10,8 @@ const HeroBanner = () => {
 				hideEventTypeDetails: false,
 				layout: "month_view",
 			});
-			try {
-				cal("on", {
-					action: "bookingSuccessful",
-					callback: (e) => sendBookingDataToBackend(e.detail.data),
-				});
-			} catch (err) {
-				console.error("Cal.com event error:", err);
-			}
 		})();
 	}, []);
-
-	const sendBookingDataToBackend = async (eventData) => {
-		try {
-			await submitBooking(eventData.data);
-		} catch (error) {
-			console.error("Booking submission error:", error);
-		}
-	};
 
 	return (
 		<section className="relative h-screen overflow-hidden" id="banner">
