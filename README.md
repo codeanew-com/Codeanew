@@ -13,6 +13,7 @@ Codeanew's official website repository. Contains the source code, assets, and co
 - [Project Structure](#project-structure)
 - [Scripts](#scripts)
 - [Codeanew Git Sparse Checkout Notes](#codeanew-git-sparse-checkout-notes)
+- [Clean Main Branch History](#clean-main-branch-history)
 - [Directus Schema](#directus-schema)
 - [Maintenance Mode](#maintenance-mode-codeanewcom)
 - [Server Setup](#server-setup)
@@ -342,6 +343,31 @@ git sparse-checkout list
 
 ```bash
 git sparse-checkout disable
+```
+
+---
+
+## Clean Main Branch History
+
+Clean main branch history — keep dev history intact
+
+```bash
+# 1. Switch to main and bring in dev's latest code
+git checkout main
+git merge dev
+
+# 2. Create orphan branch (no history) with same files
+git checkout --orphan clean-main
+git add -A
+git commit -m "initial commit"
+
+# 3. Replace main with the clean branch
+git branch -D main
+git branch -m main
+git push --force origin main
+
+# 4. Go back to dev (full history still intact)
+git checkout dev
 ```
 
 ---
