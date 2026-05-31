@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'codeanew/**'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
 
 jobs:
@@ -36,8 +40,7 @@ jobs:
           username: ${{ secrets.DO_USERNAME }}
           key: ${{ secrets.DO_KEY }}
           port: ${{ secrets.DO_PORT }}
-          script: |
-            rm -rf /var/www/codeanew.com/*
+          script: rm -rf /var/www/codeanew.com/*
 
       - name: Upload new build
         uses: appleboy/scp-action@v0.1.7
