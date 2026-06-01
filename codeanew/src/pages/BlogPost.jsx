@@ -10,7 +10,7 @@ marked.use({
   gfm: true,
   breaks: true,
   renderer: {
-    heading({ text, depth }) {
+    heading(token) {
       const classes = {
         1: "text-3xl font-bold text-heading mt-10 mb-4",
         2: "text-2xl font-bold text-heading mt-8 mb-3",
@@ -19,53 +19,72 @@ marked.use({
         5: "text-sm font-bold text-heading mt-4 mb-1",
         6: "text-xs font-bold text-heading mt-4 mb-1",
       };
-      return `<h${depth} class="${classes[depth]}">${text}</h${depth}>`;
+      const text = this.parser.parseInline(token.tokens);
+      return `<h${token.depth} class="${classes[token.depth]}">${text}</h${token.depth}>`;
     },
-    paragraph({ text }) {
+    paragraph(token) {
+      const text = this.parser.parseInline(token.tokens);
       return `<p class="text-muted leading-relaxed mb-4">${text}</p>`;
     },
-    strong({ text }) {
+    strong(token) {
+      const text = this.parser.parseInline(token.tokens);
       return `<strong class="text-heading font-semibold">${text}</strong>`;
     },
-    em({ text }) {
+    em(token) {
+      const text = this.parser.parseInline(token.tokens);
       return `<em class="italic">${text}</em>`;
     },
-    del({ text }) {
+    del(token) {
+      const text = this.parser.parseInline(token.tokens);
       return `<del class="line-through">${text}</del>`;
     },
-    link({ href, text }) {
-      return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline">${text}</a>`;
+    link(token) {
+      const text = this.parser.parseInline(token.tokens);
+      return `<a href="${token.href}" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline">${text}</a>`;
     },
-    image({ href, text }) {
-      return `<img src="${href}" alt="${text}" class="w-full rounded-xl my-6" />`;
+    image(token) {
+      return `<img src="${token.href}" alt="${token.text}" class="w-full rounded-xl my-6" />`;
     },
-    list({ body, ordered }) {
-      const tag = ordered ? "ol" : "ul";
-      const cls = ordered ? "list-decimal" : "list-disc";
+    list(token) {
+      const tag = token.ordered ? "ol" : "ul";
+      const cls = token.ordered ? "list-decimal" : "list-disc";
+      const body = token.items.map(item => this.listitem(item)).join("");
       return `<${tag} class="${cls} ml-6 mb-4 text-muted space-y-1">${body}</${tag}>`;
     },
-    listitem({ text }) {
+    listitem(token) {
+      const text = token.loose
+        ? this.parser.parse(token.tokens)
+        : this.parser.parseInline(token.tokens);
       return `<li class="leading-relaxed">${text}</li>`;
     },
-    blockquote({ text }) {
+    blockquote(token) {
+      const text = this.parser.parse(token.tokens);
       return `<blockquote class="border-l-4 border-gold pl-4 my-6 text-muted italic">${text}</blockquote>`;
     },
-    code({ text }) {
-      return `<pre class="bg-bg-light rounded-lg p-4 my-4 overflow-x-auto"><code class="text-sm text-heading font-mono">${text}</code></pre>`;
+    code(token) {
+      return `<pre class="bg-bg-light rounded-lg p-4 my-4 overflow-x-auto"><code class="text-sm text-heading font-mono">${token.text}</code></pre>`;
     },
-    codespan({ text }) {
-      return `<code class="bg-bg-light text-heading font-mono text-sm px-1.5 py-0.5 rounded">${text}</code>`;
+    codespan(token) {
+      return `<code class="bg-bg-light text-heading font-mono text-sm px-1.5 py-0.5 rounded">${token.text}</code>`;
     },
-    table({ header, rows }) {
-      return `<div class="overflow-x-auto my-6"><table class="w-full text-sm text-left border-collapse">${header}${rows}</table></div>`;
-    },
-    tablerow({ text }) {
-      return `<tr class="border-b border-gray-100">${text}</tr>`;
-    },
-    tablecell({ text, header }) {
-      return header
-        ? `<th class="px-4 py-2 font-semibold text-heading bg-bg-light">${text}</th>`
-        : `<td class="px-4 py-2 text-muted">${text}</td>`;
+    table(token) {
+      const header = "<thead><tr>" +
+        token.header.map(cell => {
+          const text = this.parser.parseInline(cell.tokens);
+          return `<th class="px-4 py-2 font-semibold text-heading bg-bg-light text-left">${text}</th>`;
+        }).join("") +
+        "</tr></thead>";
+      const body = "<tbody>" +
+        token.rows.map(row =>
+          "<tr class=\"border-b border-gray-100\">" +
+          row.map(cell => {
+            const text = this.parser.parseInline(cell.tokens);
+            return `<td class="px-4 py-2 text-muted">${text}</td>`;
+          }).join("") +
+          "</tr>"
+        ).join("") +
+        "</tbody>";
+      return `<div class="overflow-x-auto my-6"><table class="w-full text-sm text-left border-collapse">${header}${body}</table></div>`;
     },
   },
 });
