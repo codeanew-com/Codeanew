@@ -12,7 +12,7 @@ const validationSchema = Yup.object({
 	email: Yup.string().email("Invalid email address").required("Email is required"),
 	phone: Yup.string().required("Phone number is required"),
 	service: Yup.array().min(1, "At least one service is required"),
-	budget: Yup.string(),
+	budget: Yup.string().required("Budget is required"),
 	message: Yup.string(),
 });
 
