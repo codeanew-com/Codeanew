@@ -99,7 +99,7 @@ const ContactForm = () => {
 								type="text"
 								name="fullname"
 								className="form-input"
-								placeholder="Full Name"
+								placeholder="Full Name*"
 							/>
 							<ErrorMessage name="fullname" component="p" className="text-red-500 text-xs mt-1 mb-0" />
 						</div>
@@ -109,7 +109,7 @@ const ContactForm = () => {
 								type="email"
 								name="email"
 								className="form-input"
-								placeholder="Email Address"
+								placeholder="Email Address*"
 							/>
 							<ErrorMessage name="email" component="p" className="text-red-500 text-xs mt-1 mb-0" />
 						</div>
@@ -119,7 +119,7 @@ const ContactForm = () => {
 								type="text"
 								name="phone"
 								className="form-input"
-								placeholder="Phone Number"
+								placeholder="Phone Number*"
 							/>
 							<ErrorMessage name="phone" component="p" className="text-red-500 text-xs mt-1 mb-0" />
 						</div>
@@ -130,7 +130,7 @@ const ContactForm = () => {
 								name="service"
 								options={serviceOptions.map((o) => ({ value: o, label: o }))}
 								value={values.service.map((o) => ({ value: o, label: o }))}
-								placeholder="Select Services..."
+								placeholder="Select Services...*"
 								classNamePrefix="rselect"
 								onChange={(sel) => setFieldValue("service", sel ? sel.map((o) => o.value) : [])}
 								styles={selectStyles}
@@ -142,7 +142,7 @@ const ContactForm = () => {
 							name="budget"
 							options={budgetOptions}
 							value={values.budget ? { value: values.budget, label: values.budget } : null}
-							placeholder="Budget Range (Optional)"
+							placeholder="Budget Range*"
 							classNamePrefix="rselect"
 							isClearable
 							onChange={(sel) => setFieldValue("budget", sel ? sel.value : "")}
