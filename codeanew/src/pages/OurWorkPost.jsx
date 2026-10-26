@@ -38,6 +38,9 @@ const OurWorkPost = () => {
 
   if (notFound) return <Navigate to="/our-work" replace />;
 
+  // Only allow http(s) links so a bad CMS value can't inject javascript: URLs
+  const liveUrl = /^https?:\/\//i.test(project.live_url || "") ? project.live_url : null;
+
   return (
     <>
       <SEO
@@ -83,6 +86,17 @@ const OurWorkPost = () => {
               </span>
             ))}
           </div>
+
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-theme inline-flex items-center gap-2 px-6 py-3 mb-8"
+            >
+              Visit Live Site ↗
+            </a>
+          )}
 
           {project.thumbnail ? (
             <img
