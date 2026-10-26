@@ -39,7 +39,13 @@ const OurWorkPost = () => {
   if (notFound) return <Navigate to="/our-work" replace />;
 
   // Only allow http(s) links so a bad CMS value can't inject javascript: URLs
-  const liveUrl = /^https?:\/\//i.test(project.live_url || "") ? project.live_url : null;
+  let liveUrl = null;
+  try {
+    const url = new URL(project.live_url);
+    if (url.protocol === "http:" || url.protocol === "https:") liveUrl = url;
+  } catch {
+    // missing or malformed live_url — no link
+  }
 
   return (
     <>
@@ -86,17 +92,6 @@ const OurWorkPost = () => {
               </span>
             ))}
           </div>
-
-          {liveUrl && (
-            <a
-              href={liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-theme inline-flex items-center gap-2 px-6 py-3 mb-8"
-            >
-              Visit Live Site ↗
-            </a>
-          )}
 
           {project.thumbnail ? (
             <img
@@ -157,6 +152,19 @@ const OurWorkPost = () => {
                   <p className="text-sm font-semibold text-heading mt-1">{value}</p>
                 </div>
               ))}
+              {liveUrl && (
+                <div>
+                  <span className="text-xs text-muted uppercase tracking-wider">Website</span>
+                  <a
+                    href={liveUrl.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-sm font-semibold text-gold hover:underline mt-1 break-all"
+                  >
+                    {liveUrl.hostname.replace(/^www\./, "")} ↗
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
