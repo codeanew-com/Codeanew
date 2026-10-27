@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml — codeanew
-  Generated: Tue, 26 May 2026 02:38:14 GMT
-  Total URLs: 15
+  Generated: Tue, 27 Oct 2026 00:41:39 GMT
+  Total URLs: 21
 
   DO NOT edit manually — regenerate using:
   npm run sitemap
@@ -21,56 +21,56 @@
   <!-- Home — highest priority -->
   <url>
     <loc>https://codeanew.com/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Services — high value conversion page -->
   <url>
     <loc>https://codeanew.com/services</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Blog listing — updates as posts are added -->
   <url>
     <loc>https://codeanew.com/blog</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Contact — high conversion, stable content -->
   <url>
     <loc>https://codeanew.com/contact-us</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Our Work listing — updates as projects are added -->
   <url>
     <loc>https://codeanew.com/our-work</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- About — team changes occasionally -->
   <url>
     <loc>https://codeanew.com/about</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Our Process — stable, rarely changes -->
   <url>
     <loc>https://codeanew.com/our-process</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <!-- Privacy — changes only when policy updates -->
   <url>
     <loc>https://codeanew.com/privacy</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -79,57 +79,99 @@
   <!-- BLOG POSTS (5)                     -->
   <!-- ═══════════════════════════════════ -->
   
-  <!-- Blog: custom-crm-development-uae -->
+  <!-- Blog: custom-crm-vs-off-the-shelf-uae -->
   <url>
-    <loc>https://codeanew.com/blog/custom-crm-development-uae</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://codeanew.com/blog/custom-crm-vs-off-the-shelf-uae</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Blog: ecommerce-development-dubai -->
+  <!-- Blog: digital-transformation-uae-sme-guide -->
   <url>
-    <loc>https://codeanew.com/blog/ecommerce-development-dubai</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://codeanew.com/blog/digital-transformation-uae-sme-guide</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Blog: erp-software-small-business-uae -->
+  <!-- Blog: app-development-cost-dubai-2026 -->
   <url>
-    <loc>https://codeanew.com/blog/erp-software-small-business-uae</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://codeanew.com/blog/app-development-cost-dubai-2026</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Blog: mobile-app-development-cost-uae -->
+  <!-- Blog: react-vs-nextjs-uae-businesses -->
   <url>
-    <loc>https://codeanew.com/blog/mobile-app-development-cost-uae</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://codeanew.com/blog/react-vs-nextjs-uae-businesses</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Blog: react-development-uae -->
+  <!-- Blog: custom-software-development-uae -->
   <url>
-    <loc>https://codeanew.com/blog/react-development-uae</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://codeanew.com/blog/custom-software-development-uae</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- ═══════════════════════════════════ -->
-  <!-- PROJECTS (2)                    -->
+  <!-- PROJECTS (8)                    -->
   <!-- ═══════════════════════════════════ -->
   
-  <!-- Project: custom-crm-uae -->
+  <!-- Project: bon-al-khaleej -->
   <url>
-    <loc>https://codeanew.com/our-work/custom-crm-uae</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://codeanew.com/our-work/bon-al-khaleej</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- Project: codeanew-platform -->
+  <!-- Project: byond-cncepts -->
   <url>
-    <loc>https://codeanew.com/our-work/codeanew-platform</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://codeanew.com/our-work/byond-cncepts</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Project: adiuvat-group -->
+  <url>
+    <loc>https://codeanew.com/our-work/adiuvat-group</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Project:  blkcab -->
+  <url>
+    <loc>https://codeanew.com/our-work/ blkcab</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Project: yalla-luggage -->
+  <url>
+    <loc>https://codeanew.com/our-work/yalla-luggage</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Project: yalla-shipping -->
+  <url>
+    <loc>https://codeanew.com/our-work/yalla-shipping</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Project: yalla-courier -->
+  <url>
+    <loc>https://codeanew.com/our-work/yalla-courier</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Project: bluedart-uae -->
+  <url>
+    <loc>https://codeanew.com/our-work/bluedart-uae</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

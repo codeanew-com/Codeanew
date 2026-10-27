@@ -81,21 +81,6 @@ const formatUrl = ({ url, lastmod, changefreq, priority, comment }) => `
     <priority>${priority}</priority>
   </url>`;
 
-const pingSearchEngines = async () => {
-  try {
-    await axios.get(`https://www.google.com/ping?sitemap=${SITE_URL}/sitemap.xml`);
-    console.log("  ✓ Google pinged");
-  } catch {
-    console.warn("  ⚠ Google ping failed");
-  }
-  try {
-    await axios.get(`https://www.bing.com/ping?sitemap=${SITE_URL}/sitemap.xml`);
-    console.log("  ✓ Bing pinged");
-  } catch {
-    console.warn("  ⚠ Bing ping failed");
-  }
-};
-
 const generate = async () => {
   console.log("\n🗺  Generating sitemap...\n");
 
@@ -194,9 +179,6 @@ const generate = async () => {
     console.log(`   Blog posts : ${blogUrls.length}`);
     console.log(`   Projects   : ${projectUrls.length}`);
     console.log(`   Saved to   : ${OUTPUT}\n`);
-
-    await pingSearchEngines();
-
   } catch (err) {
     console.error("\n❌ Sitemap generation failed:", err.message);
     process.exit(1);
