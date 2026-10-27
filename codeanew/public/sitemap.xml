@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml — codeanew
-  Generated: Tue, 27 Oct 2026 00:41:39 GMT
+  Generated: Tue, 27 Oct 2026 00:43:15 GMT
   Total URLs: 21
 
   DO NOT edit manually — regenerate using:
@@ -140,9 +140,9 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- Project:  blkcab -->
+  <!-- Project: blkcab -->
   <url>
-    <loc>https://codeanew.com/our-work/ blkcab</loc>
+    <loc>https://codeanew.com/our-work/blkcab</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
