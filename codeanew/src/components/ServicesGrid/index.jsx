@@ -10,7 +10,7 @@ const ServicesGrid = ({ isHomePage = false }) => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h1>What We Offer</h1>
+          {isHomePage ? <h2>What We Offer</h2> : <h1>What We Offer</h1>}
           <p>Three pillars. One partner. Everything your business needs.</p>
         </div>
 

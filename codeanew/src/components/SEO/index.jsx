@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { defaultSEO } from "../../constants/seo";
 
 const SEO = ({ title, description, ogImage, ogType = "website", canonicalUrl }) => {
@@ -9,6 +10,11 @@ const SEO = ({ title, description, ogImage, ogType = "website", canonicalUrl }) 
       : `${defaultSEO.siteUrl}${ogImage}`
     : `${defaultSEO.siteUrl}${defaultSEO.defaultOgImage}`;
   const canonical = canonicalUrl ? `${defaultSEO.siteUrl}${canonicalUrl}` : defaultSEO.siteUrl;
+
+  // index.html ships fallback tags for non-JS crawlers; drop them once page tags render to avoid duplicates
+  useLayoutEffect(() => {
+    document.querySelectorAll("head [data-fallback]").forEach((el) => el.remove());
+  }, []);
 
   return (
     <>

@@ -43,7 +43,7 @@ const OurTeam = () => {
     <section className="py-20 bg-bg-light" id="team">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h1>Our Team</h1>
+          <h2>Our Team</h2>
           <p>Meet the experts behind our success.</p>
         </div>
 

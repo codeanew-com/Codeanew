@@ -14,7 +14,7 @@ const Technologies = () => (
   <section className="py-20 bg-bg-light">
     <div className="container mx-auto px-4">
       <div className="section-title">
-        <h1>Technologies We Work With</h1>
+        <h2>Technologies We Work With</h2>
         <p>20+ tools and frameworks across every layer of your stack.</p>
       </div>
 
